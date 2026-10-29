@@ -32,14 +32,14 @@ tokens/
 css/
   scpf.css         The system stylesheet: imports tokens.css, then every component
 guidelines/
-  logo.md          Files, which to use where, misuse, open items
+  logo.md          Files, which to use where, misuse
   color.md         Palette, proportion, the gold rule, measured contrast
   typography.md    Newsreader + Instrument Sans, scale, practice
   layout.md        Squared corners, hairlines, spacing, grids, breakpoints
   components.md    Buttons, forms, cards, lists, chrome, goal meter, photo reel
   photography.md   Subject, treatment, files, consent
   voice.md         Names, tagline, how the Foundation writes
-  accessibility.md WCAG 2.2 AA rules and open items
+  accessibility.md WCAG 2.2 AA rules
 style-guide/
   index.html       The published one-page reference
 handoff/
@@ -153,9 +153,3 @@ Dependabot does not update Node itself. When a new Node release becomes the Acti
 ## Relationship to the website
 
 The website installs this package by tag. Its stylesheet imports `scpf.css` and adds only what is specific to the site (the Facebook video card, Keystatic draft-mode placeholders, the reel's drag cursor, the confetti canvas). Its logo files and icons are copies of the package's, and the website's tests fail if they differ. Dependabot opens a pull request in the website when this repo tags a release.
-
-## Open items
-
-- A vector master of the logo, and a one-color version: deferred. Until then the logo is for screens and full-color print only. See `guidelines/logo.md`.
-- Print colors are provisional until a printer proofs them, and there are no Pantone values yet. See `guidelines/color.md`.
-- Templates for letterhead, slides and social posts.

@@ -6,8 +6,9 @@
 - Field borders use a new token, `--field-border` (`#878F9E`, 3.25:1 on white), instead of silver (1.62:1). Inputs, selects and gift-amount buttons now meet WCAG 1.4.11.
 - On hover, `.btn-gold` lightens to `--gold-light` and keeps its midnight text (6.92:1), as the header Donate button already did. The old hover, white on `--gold-dark`, was 4.27:1.
 - `--gold-dark` is no longer used by the components. It stays, so existing references still resolve.
-- `color.md` lists provisional CMYK values for the palette, to be replaced once a printer proofs them. Pantone values are to be matched on a physical guide.
-- The vector and one-color logo are deferred. Until they exist, the logo is for screens and full-color print only.
+- `color.md` and the style guide list CMYK values for print.
+- The logo's clear-space and minimum sizes are rules.
+- The contrast check has no exceptions: any pair below its ratio fails the build.
 
 ## 1.0.0 — 2026-10-29
 
@@ -20,7 +21,7 @@ First release of the brand repo. It brings together the original design handoff 
 - The style guide is published at <https://brand.stantonfoundation.org> on every push to `main` that passes `build`. It is a plain one-page reference that cannot be mistaken for the Foundation's website.
 - Runs on Node 26, the current LTS. `.nvmrc` holds the version, and every workflow reads it.
 - Dependabot proposes weekly updates for the dev tools and the workflow actions, with a seven-day cooldown.
-- `pnpm test` checks contrast. Every color pair in use is listed in `tokens/contrast.json` with the ratio it needs; the check computes each from `tokens/tokens.json` and generates the table in `guidelines/color.md`. It found one new failure: silver input borders on white, 1.62:1 against the 3:1 WCAG asks for the edge of a control. It is an open item in `guidelines/accessibility.md`.
+- `pnpm test` checks contrast. Every color pair in use is listed in `tokens/contrast.json` with the ratio it needs; the check computes each from `tokens/tokens.json` and generates the table in `guidelines/color.md`. It found one new failure: silver input borders on white, 1.62:1 against the 3:1 WCAG asks for the edge of a control.
 - CI: the `build` workflow runs Prettier, markdownlint, the token check, a link check and actionlint on every push and pull request. `package.json` pins pnpm and the lint tools.
 
 ### Differences from the original handoff
