@@ -1,6 +1,6 @@
 # Components
 
-Every component is a class in `css/scpf.css`, and `style-guide/index.html` shows each one rendered. The Foundation's website, <https://stantonfoundation.org>, uses all of them and is the reference for how they fit together.
+Every component is a class in `css/scpf.css`. The style guide shows samples of the buttons, cards and form fields. The Foundation's website, <https://stantonfoundation.org>, uses all of them, including the header, goal meter, photo reel and footer, and is the reference for how they fit together.
 
 ## Buttons
 

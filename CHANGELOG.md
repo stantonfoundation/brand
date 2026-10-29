@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- The style guide is a plain one-page reference. It no longer copies the website's header, hero, goal meter, gift form or footer, so it cannot be mistaken for the Foundation's site.
+
 ## 1.0.0 — 2026-10-29
 
 First release of the brand repo. It brings together the original design handoff (`handoff/design_handoff_scpf_website/`) and the refinements the website made to it between August and October 2026.
