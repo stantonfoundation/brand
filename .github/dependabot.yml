@@ -1,0 +1,37 @@
+# Dependabot keeps the dev tools (npm) and the actions in the workflows
+# (github-actions) up to date. Pull requests go to `main` and must pass
+# the `build` check like any other.
+#
+# - Weekly, with a 7-day cooldown: a new release waits a week before
+#   Dependabot proposes it, so a bad or compromised release has time to
+#   be pulled first.
+# - Minor and patch updates arrive as one grouped pull request per
+#   ecosystem. A major update gets its own.
+# - Actions stay pinned to full commit SHAs; Dependabot updates the SHA
+#   and the version comment together.
+#
+# Dependabot does not update Node itself. .nvmrc holds the version; see
+# README, "Moving to a new Node LTS".
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      dev-tools:
+        patterns: ["*"]
+        update-types: [minor, patch]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      actions:
+        patterns: ["*"]
+        update-types: [minor, patch]
