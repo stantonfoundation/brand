@@ -114,7 +114,7 @@ pnpm build:pages   # the published style guide, in _site/
 pnpm build:kit     # the brand kit zip, in _kit/
 ```
 
-The `build` workflow runs all of these, plus actionlint, on every push and pull request. Merge only when it passes. `handoff/` is excluded from every check, so it stays byte-identical to the original zip.
+The `build` workflow runs all of these, plus actionlint, on every push and pull request. A ruleset on `main` requires a pull request and a passing `build` check, and blocks force-pushes and deleting the branch. `handoff/` is excluded from every check, so it stays byte-identical to the original zip.
 
 ## Dependency updates
 
@@ -131,7 +131,7 @@ Every push to `main` that passes `build` publishes the style guide to GitHub Pag
 3. Open the style guide and check the change on both light and dark grounds.
 4. If the change adds or alters a color pair, list it in `tokens/contrast.json` and run `pnpm contrast`.
 5. Update the guideline that describes the change, and add a line to `CHANGELOG.md`.
-6. The website keeps its own copy of the stylesheet (`src/styles/styles.css`). Make the matching change there in a pull request to the website repo.
+6. Release it (below). The website picks up the change when it takes the new tag.
 
 ## Releasing
 
@@ -152,7 +152,7 @@ Dependabot does not update Node itself. When a new Node release becomes the Acti
 
 ## Relationship to the website
 
-The website does not import from this repo yet. Its stylesheet is a superset of `css/scpf.css`: the same tokens and components, plus pieces that only make sense on the site (the Facebook video card, Keystatic draft-mode placeholders, the confetti canvas). Until the website installs this package, keep the two in step by hand.
+The website installs this package by tag. Its stylesheet imports `scpf.css` and adds only what is specific to the site (the Facebook video card, Keystatic draft-mode placeholders, the reel's drag cursor, the confetti canvas). Its logo files and icons are copies of the package's, and the website's tests fail if they differ. Dependabot opens a pull request in the website when this repo tags a release.
 
 ## Open items
 
