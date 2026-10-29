@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Node 26, the current LTS, replaces Node 22. `.nvmrc` holds the version, and every workflow reads it.
+
 ## 1.0.0 — 2026-10-29
 
 First release of the brand repo. It brings together the original design handoff (`handoff/design_handoff_scpf_website/`) and the refinements the website made to it between August and October 2026.

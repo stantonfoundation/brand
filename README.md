@@ -100,9 +100,10 @@ Every release has a brand kit zip attached: the logo files (with the 2000×2000 
 
 ## Checks
 
-Requires Node 22.12 or later and pnpm 11 or later. The pnpm version is pinned in `package.json`.
+Requires Node 26, the current LTS, and pnpm 11 or later. `.nvmrc` holds the Node version (`nvm use` reads it) and every workflow reads it too. The pnpm version is pinned in `package.json`.
 
 ```bash
+nvm use
 pnpm install
 pnpm lint          # Prettier and markdownlint, check only
 pnpm test          # token and contrast checks
@@ -136,6 +137,14 @@ A release is a version tag. The website pins a tag, so nothing reaches the websi
 2. Merge it into `main`.
 3. Tag the merge commit and push the tag: `git tag v1.1.0 && git push origin v1.1.0`.
 4. `release.yml` publishes the GitHub Release with the brand kit attached. It refuses a tag that is not on `main`, does not match `package.json`, or has no changelog section.
+
+## Moving to a new Node LTS
+
+Dependabot does not update Node itself. When a new Node release becomes the Active LTS (each October in even years):
+
+1. In a pull request, change the major version in `.nvmrc` and the minimum in `package.json` `engines`.
+2. Run `nvm use`, then `pnpm install`, `pnpm lint` and `pnpm test`.
+3. Merge when the `build` check passes. The workflows pick up the new version from `.nvmrc`.
 
 ## Relationship to the website
 
