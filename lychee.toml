@@ -1,0 +1,9 @@
+# Link check for the Markdown and HTML (pnpm check:links, and CI).
+# handoff/ stays verbatim; its links point at anchors in a page that no
+# longer exists anywhere else.
+exclude_path = ["handoff", "node_modules"]
+
+# Preconnect hints, not pages.
+exclude = ["^https://fonts\\.googleapis\\.com/?$", "^https://fonts\\.gstatic\\.com/?$"]
+
+include_fragments = "full"
