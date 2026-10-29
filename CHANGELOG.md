@@ -3,6 +3,7 @@
 ## Unreleased
 
 - The style guide is a plain one-page reference. It no longer copies the website's header, hero, goal meter, gift form or footer, so it cannot be mistaken for the Foundation's site.
+- Node 26, the current LTS, replaces Node 22. `.nvmrc` holds the version, and every workflow reads it.
 - Dependabot proposes weekly updates for the dev tools and the workflow actions, with a seven-day cooldown.
 
 ## 1.0.0 — 2026-10-29
