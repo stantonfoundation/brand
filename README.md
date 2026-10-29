@@ -115,6 +115,10 @@ pnpm build:kit     # the brand kit zip, in _kit/
 
 The `build` workflow runs all of these, plus actionlint, on every push and pull request. Merge only when it passes. `handoff/` is excluded from every check, so it stays byte-identical to the original zip.
 
+## Dependency updates
+
+Dependabot (`.github/dependabot.yml`) proposes updates weekly for the dev tools in `package.json` and for the actions in the workflows. Minor and patch updates come grouped, one pull request per ecosystem; a major update gets its own. A new release waits seven days before Dependabot proposes it. Review and merge these like any pull request: the `build` check must pass.
+
 ## Publishing
 
 Every push to `main` that passes `build` publishes the style guide to GitHub Pages (`pages.yml`). The published copy leaves out `handoff/`, whose homepage has placeholder figures, and links the guidelines to GitHub, which renders the Markdown. To publish again without a change, run the Pages workflow on `main` from the Actions tab.
