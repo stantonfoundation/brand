@@ -1,7 +1,8 @@
 # Changelog
 
-## Unreleased
+## 1.1.0 — 2026-10-29
 
+- Versioning: a major version only when a class or token is renamed or removed. Additions and visual changes are minor.
 - The style guide is one page at the site root, <https://brand.stantonfoundation.org>, with no redirect. The page moves from `style-guide/index.html` to `index.html`.
 - A ruleset on `main` requires a pull request and the `build` check. README describes it, and says the website now installs this package by tag.
 - Field borders use a new token, `--field-border` (`#878F9E`, 3.25:1 on white), instead of silver (1.62:1). Inputs, selects and gift-amount buttons now meet WCAG 1.4.11.

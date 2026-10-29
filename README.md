@@ -136,9 +136,9 @@ Every push to `main` that passes `build` publishes the style guide to GitHub Pag
 
 A release is a version tag. The website pins a tag, so nothing reaches the website until someone tags a release and the website takes the update.
 
-1. In a pull request, set the new version in `package.json` and rename the top `CHANGELOG.md` section to that version and date (`## 1.1.0 — 2026-11-12`). Use a minor version for additions and a major version for anything that changes how the site looks or renames a class or token.
+1. In a pull request, set the new version in `package.json` and rename the top `CHANGELOG.md` section to that version and date (`## 1.2.0 — 2026-11-12`). Use a major version when a class or token is renamed or removed, because sites that use it break. Use a minor version for additions and visual changes, and a patch version for fixes that change nothing a site relies on.
 2. Merge it into `main`.
-3. Tag the merge commit and push the tag: `git tag v1.1.0 && git push origin v1.1.0`.
+3. Tag the merge commit and push the tag: `git tag v1.2.0 && git push origin v1.2.0`.
 4. `release.yml` publishes the GitHub Release with the brand kit attached. It refuses a tag that is not on `main`, does not match `package.json`, or has no changelog section.
 
 ## Moving to a new Node LTS

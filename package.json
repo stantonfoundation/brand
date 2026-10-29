@@ -1,7 +1,7 @@
 {
   "name": "@stantonfoundation/brand",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Stanton College Preparatory Foundation design system: tokens, stylesheet, logo files and guidelines.",
   "license": "UNLICENSED",
   "repository": {
