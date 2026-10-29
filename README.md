@@ -6,13 +6,13 @@ The Foundation's website, <https://stantonfoundation.org>, is the main user of t
 
 ## Start here
 
-- **See it:** <https://brand.stantonfoundation.org>. The style guide is a one-page reference: logo files, colors, type and the basic components, drawn with the real stylesheet. To see a change before it merges, open `style-guide/index.html` through a local server (below).
+- **See it:** <https://brand.stantonfoundation.org>. The style guide is a one-page reference: logo files, colors, type and the basic components, drawn with the real stylesheet. To see a change before it merges, open `index.html` through a local server (below).
 - **Read the rules:** `guidelines/`.
 - **Build with it:** link `css/scpf.css` and load the two fonts.
 
 ```bash
 python3 -m http.server 8000
-# then open http://localhost:8000/style-guide/
+# then open http://localhost:8000/
 ```
 
 Opening the HTML file straight from disk mostly works too, but some browsers block the stylesheet's `@import` of the tokens over `file://`.
@@ -20,6 +20,7 @@ Opening the HTML file straight from disk mostly works too, but some browsers blo
 ## What's here
 
 ```text
+index.html         The style guide: one page, published at the site root
 assets/
   logo/            Lockups and marks, light and dark (SVG, PNG)
   logo/source/     The original 2000×2000 logo PNG from the handoff
@@ -40,8 +41,6 @@ guidelines/
   photography.md   Subject, treatment, files, consent
   voice.md         Names, tagline, how the Foundation writes
   accessibility.md WCAG 2.2 AA rules
-style-guide/
-  index.html       The published one-page reference
 handoff/
   design_handoff_scpf_website/   The original design handoff, unchanged
 scripts/

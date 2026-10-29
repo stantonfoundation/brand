@@ -24,7 +24,7 @@ Rules for coding agents working in this repo. Read `README.md` first. This file 
 - Use pnpm. Do not use npm or yarn.
 - Run `pnpm lint` and `pnpm test`. Both must pass.
 - If you changed a workflow, run `actionlint .github/workflows/*.yml`.
-- Serve the repo (`python3 -m http.server`) and look at `style-guide/index.html` at desktop width and below 960px.
+- Serve the repo (`python3 -m http.server`) and look at `index.html` at desktop width and below 960px.
 - If you changed a color or added a color pair, list the pair in `tokens/contrast.json` and run `pnpm contrast`. Do not edit the contrast table in `guidelines/color.md` by hand.
 - Add a line to `CHANGELOG.md`.
 
