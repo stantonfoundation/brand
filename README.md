@@ -158,5 +158,4 @@ The website does not import from this repo yet. Its stylesheet is a superset of 
 
 - A vector master of the logo, and a one-color version. The current SVGs wrap raster images. See `guidelines/logo.md`.
 - Print color values (CMYK, Pantone).
-- The `.btn-gold` hover contrast and the input border contrast. See `guidelines/accessibility.md`.
 - Templates for letterhead, slides and social posts.

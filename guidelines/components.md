@@ -16,7 +16,7 @@ Buttons are 48px minimum height, 15.5px Instrument Sans 600, padded 16px by 32px
 
 ## Forms
 
-- Bare `input` and `select` are styled: white, silver hairline, 48px tall, 16px text (16px stops iOS from zooming on focus).
+- Bare `input` and `select` are styled: white, a `--field-border` hairline, 48px tall, 16px text (16px stops iOS from zooming on focus).
 - `.field` stacks a `.label` above its control with 8px between.
 - `.amount-btn` is the gift amount picker. Mark the chosen one with `aria-pressed="true"` (or the `.selected` class). The selected state is a 2px gold rule on parchment.
 - On a dark band, inputs inside `.on-dark` turn translucent with a white hairline.
