@@ -6,7 +6,7 @@ The Foundation's website, <https://stantonfoundation.org>, is the main user of t
 
 ## Start here
 
-- **See it:** <https://stantonfoundation.github.io/brand/>. The style guide is a one-page reference: logo files, colors, type and the basic components, drawn with the real stylesheet. To see a change before it merges, open `style-guide/index.html` through a local server (below).
+- **See it:** <https://brand.stantonfoundation.org>. The style guide is a one-page reference: logo files, colors, type and the basic components, drawn with the real stylesheet. To see a change before it merges, open `style-guide/index.html` through a local server (below).
 - **Read the rules:** `guidelines/`.
 - **Build with it:** link `css/scpf.css` and load the two fonts.
 
@@ -122,7 +122,7 @@ Dependabot (`.github/dependabot.yml`) proposes updates weekly for the dev tools 
 
 ## Publishing
 
-Every push to `main` that passes `build` publishes the style guide to GitHub Pages (`pages.yml`). The published copy leaves out `handoff/`, whose homepage has placeholder figures, and links the guidelines to GitHub, which renders the Markdown. To publish again without a change, run the Pages workflow on `main` from the Actions tab.
+Every push to `main` that passes `build` publishes the style guide to GitHub Pages (`pages.yml`). It is served at <https://brand.stantonfoundation.org>. The published copy leaves out `handoff/`, whose homepage has placeholder figures, and links the guidelines to GitHub, which renders the Markdown. To publish again without a change, run the Pages workflow on `main` from the Actions tab.
 
 ## Changing the system
 
