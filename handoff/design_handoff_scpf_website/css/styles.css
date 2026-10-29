@@ -1,0 +1,159 @@
+/* Stanton College Preparatory Foundation — stylesheet
+   Tokens first; components below. Fonts: Newsreader (serif) + Instrument Sans (sans). */
+
+:root {
+  /* Color tokens */
+  --midnight: #0F172B;   /* hero fields, footer, text on light */
+  --navy: #16213C;       /* core brand: nav, headings, seals */
+  --devil-blue: #274270; /* links, secondary actions, active states */
+  --gold: #B4883C;       /* giving actions ONLY — keep scarce */
+  --gold-dark: #9C7330;  /* gold hover */
+  --gold-light: #C79A4C; /* gold hover on dark */
+  --slate: #4A5567;      /* body copy */
+  --steel: #6C7A93;      /* labels, meta */
+  --silver: #C6CBD3;     /* text on navy, input borders */
+  --platinum: #E2E4E8;   /* borders, rules */
+  --paper: #F8F8F6;      /* page ground */
+  --parchment: #F3EADA;  /* gold-tinted fills */
+  --navy-card: #1D2A48;  /* card fill on navy */
+  --steel-dark: #8E9AB0; /* muted text on dark */
+
+  /* Type */
+  --serif: 'Newsreader', Georgia, serif;
+  --sans: 'Instrument Sans', system-ui, sans-serif;
+
+  /* Layout */
+  --gutter: 6vw;
+  --max-width: 1440px;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--navy);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+html { scroll-behavior: smooth; }
+
+a { color: var(--devil-blue); text-decoration: none; }
+a:hover { color: var(--gold); }
+
+/* ---------- Typography scale ---------- */
+.display { font-family: var(--serif); font-weight: 400; font-size: 62px; line-height: 1.03; letter-spacing: -0.02em; margin: 0; text-wrap: pretty; }
+h2, .h1 { font-family: var(--serif); font-weight: 500; font-size: 40px; line-height: 1.1; letter-spacing: -0.015em; margin: 0; }
+h3, .h2 { font-family: var(--serif); font-weight: 500; font-size: 26px; line-height: 1.2; margin: 0; }
+.h3 { font-family: var(--sans); font-weight: 600; font-size: 21px; line-height: 1.3; }
+.lead { font-size: 20px; line-height: 1.6; color: var(--slate); text-wrap: pretty; }
+p { font-size: 15.5px; line-height: 1.65; color: var(--slate); margin: 0; }
+.eyebrow {
+  font-size: 11.5px; font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--gold);
+  display: flex; align-items: center; gap: 12px;
+}
+.eyebrow::before { content: ""; width: 30px; height: 1px; background: var(--gold); }
+.label { font-size: 12.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--slate); }
+.stat-number { font-family: var(--serif); font-size: 52px; line-height: 1; }
+.serial { font-family: var(--serif); font-size: 15px; color: var(--gold); }
+
+/* Dark sections */
+.on-dark { color: #fff; }
+.on-dark p, .on-dark .lead { color: var(--silver); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  font-family: var(--sans); font-size: 15.5px; font-weight: 600;
+  padding: 16px 32px; min-height: 48px; border: none; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.btn-gold { background: var(--gold); color: var(--midnight); }
+.btn-gold:hover { background: var(--gold-dark); color: #fff; }
+.btn-navy { background: var(--navy); color: #fff; }
+.btn-navy:hover { background: var(--devil-blue); color: #fff; }
+.btn-outline { background: transparent; color: var(--devil-blue); border: 1px solid var(--devil-blue); }
+.btn-outline:hover { background: var(--devil-blue); color: #fff; }
+.btn-outline-light { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.4); }
+.btn-outline-light:hover { border-color: #fff; background: rgba(255,255,255,0.08); color: #fff; }
+.text-link { font-size: 14.5px; font-weight: 600; color: var(--devil-blue); border-bottom: 1px solid var(--gold); padding-bottom: 2px; }
+.text-link:hover { color: var(--gold); }
+
+/* ---------- Forms ---------- */
+input, select {
+  font-family: var(--sans); font-size: 16px; color: var(--navy);
+  padding: 13px 14px; border: 1px solid var(--silver); background: #fff; min-height: 48px; width: 100%;
+}
+input:focus, select:focus, .btn:focus-visible { outline: 2px solid var(--devil-blue); outline-offset: 2px; }
+.field { display: flex; flex-direction: column; gap: 8px; }
+.amount-btn {
+  font-family: var(--sans); padding: 14px 0; border: 1px solid var(--silver);
+  background: #fff; font-size: 15.5px; font-weight: 500; color: var(--slate);
+  cursor: pointer; min-height: 48px;
+}
+.amount-btn:hover { border-color: var(--devil-blue); color: var(--devil-blue); }
+.amount-btn.selected { border: 2px solid var(--gold); background: var(--parchment); font-weight: 600; color: var(--midnight); }
+
+/* ---------- Cards ---------- */
+.card { background: #fff; border: 1px solid var(--platinum); padding: 32px 34px 34px; }
+.card-flagged { border-top: 3px solid var(--navy); }
+.card-navy { background: var(--navy-card); border: 1px solid rgba(255,255,255,0.12); color: #fff; }
+.card-gold { background: var(--parchment); border: 1px solid #E4D3B0; }
+
+/* ---------- Layout ---------- */
+section, .section { padding: 84px var(--gutter); }
+.section-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  border-bottom: 1px solid var(--platinum); padding-bottom: 20px; margin-bottom: 44px;
+  flex-wrap: wrap; gap: 16px;
+}
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
+.grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 44px; }
+
+/* ---------- Site chrome ---------- */
+.match-banner {
+  background: var(--gold); color: var(--midnight); padding: 11px var(--gutter);
+  display: flex; justify-content: center; gap: 10px; align-items: center;
+  font-size: 13.5px; font-weight: 600; flex-wrap: wrap;
+}
+.match-banner a { color: var(--midnight); border-bottom: 1px solid rgba(15,23,43,0.4); }
+
+.site-header {
+  background: var(--midnight); color: #fff; padding: 16px var(--gutter);
+  display: flex; justify-content: space-between; align-items: center; gap: 32px;
+  position: sticky; top: 0; z-index: 20; border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.logo-lockup { display: flex; align-items: center; gap: 13px; color: #fff; }
+.logo-lockup img { width: 42px; height: 42px; object-fit: contain; background: #fff; padding: 3px; border-radius: 2px; }
+.logo-lockup .wordmark { font-family: var(--serif); font-size: 20px; line-height: 1.15; }
+.logo-lockup .sub { font-family: var(--sans); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+.site-nav { display: flex; align-items: center; gap: 30px; font-size: 13.5px; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 500; }
+.site-nav a { color: var(--silver); }
+.site-nav a:hover { color: #fff; }
+.site-nav .nav-donate { background: var(--gold); color: var(--midnight); padding: 13px 22px; font-weight: 600; min-height: 44px; display: flex; align-items: center; }
+.site-nav .nav-donate:hover { background: var(--gold-light); }
+
+.hero { background: var(--navy); padding: 88px var(--gutter); display: grid; grid-template-columns: 1.3fr 1fr; gap: 64px; align-items: center; }
+.goal-meter { background: var(--navy-card); border: 1px solid rgba(255,255,255,0.12); padding: 36px 34px; }
+.goal-meter .bar { height: 8px; background: rgba(255,255,255,0.14); }
+.goal-meter .bar-fill { height: 8px; background: var(--gold); }
+
+.site-footer { background: var(--midnight); color: var(--steel-dark); padding: 64px var(--gutter) 34px; }
+.site-footer a { color: var(--steel-dark); }
+.site-footer a:hover { color: var(--gold); }
+.footer-grid {
+  display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 44px;
+  padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.footer-col { display: flex; flex-direction: column; gap: 11px; font-size: 14.5px; }
+.footer-col .col-title { font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #fff; font-weight: 600; margin-bottom: 5px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .display { font-size: 44px; }
+  h2, .h1 { font-size: 32px; }
+  .hero, .grid-2 { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .site-header { flex-wrap: wrap; }
+  .site-nav { flex-wrap: wrap; gap: 18px; }
+}

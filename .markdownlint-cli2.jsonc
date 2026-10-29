@@ -1,0 +1,8 @@
+{
+  // One paragraph per line; Prettier owns table formatting.
+  "config": {
+    "MD013": false,
+    "MD060": false,
+  },
+  "ignores": ["handoff/**", "node_modules/**", "CLAUDE.md"],
+}

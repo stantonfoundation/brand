@@ -1,0 +1,1070 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Style Guide · Stanton College Preparatory Foundation</title>
+    <!-- A reference for designers, not the Foundation's website. Keep it out of search results. -->
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="../assets/icons/favicon.ico" sizes="32x32" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Instrument+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/scpf.css" />
+    <style>
+      /* Specimen-only helpers. Nothing here belongs in the system. */
+      .sg-nav {
+        display: flex;
+        gap: 22px;
+        flex-wrap: wrap;
+        font-size: 13.5px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 18px var(--gutter);
+        background: #fff;
+        border-bottom: 1px solid var(--platinum);
+      }
+      .sg-swatches {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+        gap: 18px;
+      }
+      .sg-swatch {
+        border: 1px solid var(--platinum);
+        background: #fff;
+      }
+      .sg-swatch .chip {
+        height: 92px;
+        display: flex;
+        align-items: flex-end;
+        padding: 10px 12px;
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .sg-swatch .meta {
+        padding: 12px 14px 14px;
+        font-size: 13px;
+        line-height: 1.5;
+        color: var(--slate);
+      }
+      .sg-swatch code,
+      .sg code {
+        font-family: ui-monospace, Menlo, monospace;
+        font-size: 12.5px;
+        color: var(--navy);
+      }
+      .sg-proportion {
+        display: flex;
+        height: 44px;
+        border: 1px solid var(--platinum);
+        margin-top: 28px;
+      }
+      .sg-row {
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        gap: 28px;
+        padding: 22px 0;
+        border-bottom: 1px solid var(--platinum);
+        align-items: baseline;
+      }
+      .sg-row .spec {
+        font-size: 13px;
+        color: var(--steel);
+        line-height: 1.5;
+      }
+      .sg-demo {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .sg-logos {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 18px;
+      }
+      .sg-logos figure {
+        margin: 0;
+        border: 1px solid var(--platinum);
+      }
+      .sg-logos img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: contain;
+      }
+      .sg-logos figcaption {
+        padding: 12px 14px;
+        font-size: 13px;
+        color: var(--slate);
+        background: #fff;
+        border-top: 1px solid var(--platinum);
+      }
+      .sg-note {
+        font-size: 14px;
+        color: var(--slate);
+        max-width: 70ch;
+        margin-top: 18px;
+      }
+      .sg-do-dont {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+      .sg-do-dont h3 {
+        margin-bottom: 14px;
+      }
+      .sg-do-dont ul {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--slate);
+        font-size: 15px;
+        line-height: 1.65;
+      }
+      @media (max-width: 960px) {
+        .sg-row,
+        .sg-do-dont {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <aside class="match-banner" aria-label="About this page">
+      <span
+        >This is the Foundation's style guide. The buttons and figures on it are
+        samples.</span
+      >
+      <a href="https://stantonfoundation.org/#give"
+        >Give on stantonfoundation.org &rarr;</a
+      >
+    </aside>
+
+    <header class="site-header">
+      <a href="#top" class="logo-lockup logo-lockup-lg">
+        <img
+          src="../assets/logo/scpf-mark-144.png"
+          alt="Stanton College Preparatory Foundation logo"
+        />
+        <span class="wordmark"
+          >Stanton College Preparatory<span class="sub">Foundation</span></span
+        >
+      </a>
+      <button
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="Menu"
+      >
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 22 22"
+          stroke="currentColor"
+          stroke-width="2"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path class="nt-open" d="M2 5h18M2 11h18M2 17h18" />
+          <path class="nt-close" d="M4 4l14 14M18 4L4 18" />
+        </svg>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="#logo">Logo</a>
+        <a href="#color">Color</a>
+        <a href="#type">Type</a>
+        <a href="#components">Components</a>
+        <a href="https://stantonfoundation.org/#give" class="nav-donate"
+          >Donate</a
+        >
+      </nav>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section id="top" class="hero on-dark">
+        <div>
+          <div class="eyebrow" style="margin-bottom: 22px">
+            Generations With One Common Goal
+          </div>
+          <h1 class="display" style="margin-bottom: 22px">
+            The Foundation's design system and style guide.
+          </h1>
+          <p class="lead" style="margin-bottom: 34px; max-width: 52ch">
+            Every color, typeface and component on this page comes from
+            <code style="color: #fff">css/scpf.css</code>. If it looks right
+            here, it will look right on the site.
+          </p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap">
+            <a href="https://stantonfoundation.org/#give" class="btn btn-gold"
+              >Give to Stanton</a
+            >
+            <a href="#color" class="btn btn-outline-light">Start with color</a>
+          </div>
+        </div>
+        <div class="goal-meter">
+          <div
+            class="label"
+            style="
+              color: var(--steel-dark);
+              letter-spacing: 0.16em;
+              margin-bottom: 22px;
+            "
+          >
+            Toward this year's goal (sample figures)
+          </div>
+          <div
+            style="
+              font-family: var(--serif);
+              font-size: 50px;
+              line-height: 1;
+              margin-bottom: 6px;
+            "
+          >
+            $38,250
+          </div>
+          <div
+            style="
+              font-size: 14.5px;
+              color: var(--steel-dark);
+              margin-bottom: 20px;
+            "
+          >
+            of $65,000
+          </div>
+          <div
+            class="bar"
+            role="progressbar"
+            aria-label="Progress toward this year's goal"
+            aria-valuemin="0"
+            aria-valuemax="65000"
+            aria-valuenow="38250"
+            aria-valuetext="$38,250 raised of $65,000"
+          >
+            <div
+              class="bar-seg"
+              data-state="met"
+              data-ink="dark"
+              style="flex-basis: 23.08%"
+            >
+              <div class="bar-fill" style="width: 100%"></div>
+              <span class="bar-amount">$15K</span>
+            </div>
+            <div
+              class="bar-seg"
+              data-state="met"
+              data-ink="dark"
+              style="flex-basis: 23.08%"
+            >
+              <div class="bar-fill" style="width: 100%"></div>
+              <span class="bar-amount">$15K</span>
+            </div>
+            <div
+              class="bar-seg"
+              data-state="current"
+              data-ink="light"
+              style="flex-basis: 53.84%"
+            >
+              <div class="bar-fill" style="width: 23.6%"></div>
+              <span class="bar-amount">$35K</span>
+            </div>
+          </div>
+          <ol class="milestones" aria-label="Milestones">
+            <li data-state="met" style="flex-basis: 23.08%">
+              <span class="ms-mark" aria-hidden="true"></span
+              ><span class="ms-label">Pilot</span
+              ><span class="ms-amount">$15K</span>
+            </li>
+            <li data-state="met" style="flex-basis: 23.08%">
+              <span class="ms-mark" aria-hidden="true"></span
+              ><span class="ms-label">Match</span
+              ><span class="ms-amount">$30K</span>
+            </li>
+            <li data-state="current" style="flex-basis: 53.84%">
+              <span class="ms-mark" aria-hidden="true"></span
+              ><span class="ms-label">Annual fund</span
+              ><span class="ms-amount">$65K</span>
+            </li>
+          </ol>
+          <div class="next-label">Next: $26,750 to the goal</div>
+        </div>
+      </section>
+
+      <nav class="sg-nav" aria-label="Style guide sections">
+        <a href="#logo">Logo</a><a href="#color">Color</a
+        ><a href="#type">Typography</a><a href="#layout">Layout</a
+        ><a href="#components">Components</a><a href="#chrome">Chrome</a
+        ><a href="#voice">Voice</a>
+      </nav>
+
+      <!-- ============ LOGO ============ -->
+      <section id="logo">
+        <div class="section-head">
+          <h2>Logo</h2>
+          <a href="../guidelines/logo.md" class="text-link"
+            >Logo guidelines &rarr;</a
+          >
+        </div>
+        <div class="sg-logos">
+          <figure>
+            <img
+              src="../assets/logo/scpf-lockup.svg"
+              alt="Full lockup on white"
+            />
+            <figcaption>
+              <code>scpf-lockup.svg</code><br />Full lockup, light grounds
+            </figcaption>
+          </figure>
+          <figure style="background: var(--midnight)">
+            <img
+              src="../assets/logo/scpf-lockup-dark.svg"
+              alt="Full lockup on midnight"
+            />
+            <figcaption>
+              <code>scpf-lockup-dark.svg</code><br />Full lockup, dark grounds
+            </figcaption>
+          </figure>
+          <figure style="background: var(--midnight)">
+            <img
+              src="../assets/logo/scpf-lockup-dark-muted.svg"
+              alt="Muted full lockup on midnight"
+            />
+            <figcaption>
+              <code>scpf-lockup-dark-muted.svg</code><br />Muted lockup, dark
+              grounds
+            </figcaption>
+          </figure>
+          <figure style="background: #fff">
+            <img src="../assets/logo/scpf-mark.svg" alt="Mark on white" />
+            <figcaption>
+              <code>scpf-mark.svg</code><br />Mark alone, light grounds
+            </figcaption>
+          </figure>
+          <figure style="background: #fff">
+            <img
+              src="../assets/logo/scpf-mark-muted.svg"
+              alt="Muted mark on white"
+            />
+            <figcaption>
+              <code>scpf-mark-muted.svg</code><br />Muted mark, light grounds
+            </figcaption>
+          </figure>
+          <figure style="background: var(--midnight)">
+            <img
+              src="../assets/logo/scpf-mark-dark.svg"
+              alt="Mark on midnight"
+            />
+            <figcaption>
+              <code>scpf-mark-dark.svg</code><br />Mark on its own midnight
+              square
+            </figcaption>
+          </figure>
+          <figure style="background: var(--navy)">
+            <img
+              src="../assets/logo/scpf-mark-144.png"
+              alt="Transparent mark on navy"
+              style="padding: 22%"
+            />
+            <figcaption>
+              <code>scpf-mark-144.png</code><br />Transparent mark for web
+              chrome
+            </figcaption>
+          </figure>
+        </div>
+        <p class="sg-note">
+          The mark is a three-lobed interlaced knot: one band in Devil blue, one
+          shading to silver, one to ivory. It is a rendered, dimensional image,
+          not flat vector art. Never recolor it, flatten it, outline it, or set
+          it inside a box. In web chrome, pair the transparent mark with the
+          HTML wordmark (shown in the header above) instead of placing the
+          round-text lockup at small sizes.
+        </p>
+      </section>
+
+      <!-- ============ COLOR ============ -->
+      <section
+        id="color"
+        style="
+          background: #fff;
+          border-top: 1px solid var(--platinum);
+          border-bottom: 1px solid var(--platinum);
+        "
+      >
+        <div class="section-head">
+          <h2>Color</h2>
+          <a href="../guidelines/color.md" class="text-link"
+            >Color guidelines &rarr;</a
+          >
+        </div>
+        <div class="sg-swatches">
+          <div class="sg-swatch">
+            <div class="chip" style="background: var(--midnight); color: #fff">
+              Midnight
+            </div>
+            <div class="meta">
+              <code>--midnight #0F172B</code><br />Header, hero, footer
+            </div>
+          </div>
+          <div class="sg-swatch">
+            <div class="chip" style="background: var(--navy); color: #fff">
+              Navy
+            </div>
+            <div class="meta">
+              <code>--navy #16213C</code><br />Headings, core brand · 15.9:1 on
+              white
+            </div>
+          </div>
+          <div class="sg-swatch">
+            <div class="chip" style="background: var(--navy-card); color: #fff">
+              Navy card
+            </div>
+            <div class="meta">
+              <code>--navy-card #1D2A48</code><br />Cards on dark
+            </div>
+          </div>
+          <div class="sg-swatch">
+            <div
+              class="chip"
+              style="background: var(--devil-blue); color: #fff"
+            >
+              Devil blue
+            </div>
+            <div class="meta">
+              <code>--devil-blue #274270</code><br />Links, focus · 10:1 on
+              white
+            </div>
+          </div>
+          <div class="sg-swatch">
+            <div
+              class="chip"
+              style="background: var(--gold); color: var(--midnight)"
+            >
+              Gold
+            </div>
+            <div class="meta">
+              <code>--gold #B4883C</code><br />Giving actions only · midnight on
+              gold 5.5:1
+            </div>
+          </div>
+          <div class="sg-swatch">
+            <div class="chip" style="background: var(--gold-dark); color: #fff">
+              Gold dark
+            </div>
+            <div class="meta">
+              <code>--gold-dark #9C7330</code><br />Gold hover, light
+            </div>
+          </div>
+          <div class="sg-swatch">
+            <div
+              class="chip"
+              style="background: var(--gold-light); color: var(--midnight)"
+            >
+              Gold light
+            </div>
+            <div class="meta">
+              <code>--gold-light #C79A4C</code><br />Gold hover, dark
+            </div>
+          </div>
+          <div class="sg-swatch">
+            <div
+              class="chip"
+              style="background: var(--parchment); color: var(--midnight)"
+            >
+              Parchment
+            </div>
+            <div class="meta">
+              <code>--parchment #F3EADA</code><br />Gold-tinted fills
+            </div>
+          </div>
+          <div class="sg-swatch">
+            <div class="chip" style="background: var(--slate); color: #fff">
+              Slate
+            </div>
+            <div class="meta">
+              <code>--slate #4A5567</code><br />Body copy · 7.5:1 on white
+            </div>
+          </div>
+          <div class="sg-swatch">
+            <div class="chip" style="background: var(--steel); color: #fff">
+              Steel
+            </div>
+            <div class="meta">
+              <code>--steel #5E6A80</code><br />Labels, meta · 5.5:1 on white
+            </div>
+          </div>
+          <div class="sg-swatch">
+            <div
+              class="chip"
+              style="background: var(--steel-dark); color: var(--midnight)"
+            >
+              Steel dark
+            </div>
+            <div class="meta">
+              <code>--steel-dark #8E9AB0</code><br />Muted text on dark · 6.3:1
+              on midnight
+            </div>
+          </div>
+          <div class="sg-swatch">
+            <div
+              class="chip"
+              style="background: var(--silver); color: var(--navy)"
+            >
+              Silver
+            </div>
+            <div class="meta">
+              <code>--silver #C6CBD3</code><br />Text on navy, input borders
+            </div>
+          </div>
+          <div class="sg-swatch">
+            <div
+              class="chip"
+              style="background: var(--platinum); color: var(--navy)"
+            >
+              Platinum
+            </div>
+            <div class="meta">
+              <code>--platinum #E2E4E8</code><br />Rules, card borders
+            </div>
+          </div>
+          <div class="sg-swatch">
+            <div
+              class="chip"
+              style="
+                background: var(--paper);
+                color: var(--navy);
+                border-bottom: 1px solid var(--platinum);
+              "
+            >
+              Paper
+            </div>
+            <div class="meta">
+              <code>--paper #F8F8F6</code><br />Page ground
+            </div>
+          </div>
+        </div>
+        <div
+          class="sg-proportion"
+          aria-label="Color proportion: 60 percent paper and white, 26 navy, 9 silver and steel, 5 gold"
+        >
+          <div style="flex: 60; background: var(--paper)"></div>
+          <div style="flex: 26; background: var(--navy)"></div>
+          <div style="flex: 9; background: var(--silver)"></div>
+          <div style="flex: 5; background: var(--gold)"></div>
+        </div>
+        <p class="sg-note">
+          Proportion: about 60% paper and white, 26% navy, 9% silver and steel,
+          5% gold. Gold appears once or twice per screen. It means “give”. It
+          never carries small text on light grounds (3:1 on paper).
+        </p>
+      </section>
+
+      <!-- ============ TYPE ============ -->
+      <section id="type">
+        <div class="section-head">
+          <h2>Typography</h2>
+          <a href="../guidelines/typography.md" class="text-link"
+            >Type guidelines &rarr;</a
+          >
+        </div>
+        <div class="sg-row">
+          <div class="spec">
+            <code>.display</code><br />Newsreader 400 · 62/1.03 · −0.02em<br />44px
+            below 960px
+          </div>
+          <div class="display">Generations with one common goal.</div>
+        </div>
+        <div class="sg-row">
+          <div class="spec">
+            <code>h2, .h1</code><br />Newsreader 500 · 40/1.1
+          </div>
+          <h2>What your gift funds</h2>
+        </div>
+        <div class="sg-row">
+          <div class="spec">
+            <code>h3, .h2</code><br />Newsreader 500 · 26/1.2
+          </div>
+          <h3>Faculty Lounge</h3>
+        </div>
+        <div class="sg-row">
+          <div class="spec">
+            <code>.h3</code><br />Instrument Sans 600 · 21/1.3
+          </div>
+          <div class="h3">Submit a one-page request</div>
+        </div>
+        <div class="sg-row">
+          <div class="spec">
+            <code>.lead</code><br />Instrument Sans 400 · 20/1.6 · slate
+          </div>
+          <p class="lead">
+            Additional financial support will compound Stanton's success.
+          </p>
+        </div>
+        <div class="sg-row">
+          <div class="spec">
+            <code>p</code><br />Instrument Sans 400 · 15.5/1.65 · slate
+          </div>
+          <p>
+            The Foundation's mission is to underwrite Stanton's academic,
+            capital improvement, arts, and extracurricular initiatives that are
+            not included in the school district's budget.
+          </p>
+        </div>
+        <div class="sg-row">
+          <div class="spec">
+            <code>.stat-number</code><br />Newsreader 400 · 52/1
+          </div>
+          <div>
+            <div class="stat-number" style="margin-bottom: 8px">1,200+</div>
+            <p>students positively impacted every year</p>
+          </div>
+        </div>
+        <div class="sg-row">
+          <div class="spec">
+            <code>blockquote</code><br />Newsreader 300 · 34/1.32
+          </div>
+          <blockquote>
+            &ldquo;Stanton is, and always will be, your home.&rdquo;
+          </blockquote>
+        </div>
+        <div class="sg-row">
+          <div class="spec">
+            <code>.label</code><br />Instrument Sans 600 · 12.5 · caps +0.06em
+          </div>
+          <div class="label">Gift amount</div>
+        </div>
+        <div class="sg-row">
+          <div class="spec">
+            <code>.eyebrow-ink</code> on light<br /><code>.eyebrow</code> (gold)
+            on dark only
+          </div>
+          <div class="eyebrow eyebrow-ink">Launch year initiatives</div>
+        </div>
+        <div class="sg-row">
+          <div class="spec">
+            <code>.serial</code><br />Newsreader · 15 · steel
+          </div>
+          <div class="serial">01</div>
+        </div>
+        <div class="sg-row">
+          <div class="spec">
+            <code>.text-link</code><br />Instrument Sans 600 · 14.5 · gold
+            underline
+          </div>
+          <div>
+            <a href="#type" class="text-link">See our wish list &rarr;</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ LAYOUT ============ -->
+      <section
+        id="layout"
+        style="
+          background: #fff;
+          border-top: 1px solid var(--platinum);
+          border-bottom: 1px solid var(--platinum);
+        "
+      >
+        <div class="section-head">
+          <h2>Layout</h2>
+          <a href="../guidelines/layout.md" class="text-link"
+            >Layout guidelines &rarr;</a
+          >
+        </div>
+        <div class="grid-4">
+          <div>
+            <div class="stat-number" style="margin-bottom: 8px">6vw</div>
+            <p>side gutter on every section, header and banner</p>
+          </div>
+          <div>
+            <div class="stat-number" style="margin-bottom: 8px">84px</div>
+            <p>vertical padding on a section</p>
+          </div>
+          <div>
+            <div class="stat-number" style="margin-bottom: 8px">0px</div>
+            <p>border radius, everywhere</p>
+          </div>
+          <div>
+            <div class="stat-number" style="margin-bottom: 8px">1px</div>
+            <p>hairline rules; no shadows</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ COMPONENTS ============ -->
+      <section id="components">
+        <div class="section-head">
+          <h2>Components</h2>
+          <a href="../guidelines/components.md" class="text-link"
+            >Component guidelines &rarr;</a
+          >
+        </div>
+
+        <h3 style="margin-bottom: 18px">Buttons</h3>
+        <div class="sg-demo" style="margin-bottom: 12px">
+          <a href="https://stantonfoundation.org/#give" class="btn btn-gold"
+            >Give to Stanton</a
+          >
+          <a href="#components" class="btn btn-navy">Start a grant request</a>
+          <a href="#components" class="btn btn-outline">Read the report</a>
+          <a href="#components" class="text-link">Inline text link &rarr;</a>
+        </div>
+        <p class="sg-note" style="margin: 0 0 48px">
+          <code>.btn-gold</code> is for giving and nothing else. Use one gold
+          button per view.
+        </p>
+
+        <h3 style="margin-bottom: 18px">Cards</h3>
+        <div class="grid-3" style="margin-bottom: 48px">
+          <div class="card card-flagged">
+            <div class="serial" style="margin-bottom: 12px">01</div>
+            <h3 style="margin-bottom: 12px">Faculty Lounge</h3>
+            <p style="margin-bottom: 20px">
+              <code>.card.card-flagged</code>: a navy top rule marks a numbered
+              program or item in a set.
+            </p>
+            <a href="#components" class="text-link"
+              >See our faculty's reactions &rarr;</a
+            >
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom: 12px">Plain card</h3>
+            <p>
+              <code>.card</code>: white, platinum hairline, 32/34px padding.
+              Events, forms, documents.
+            </p>
+          </div>
+          <div class="card card-gold">
+            <h3 style="margin-bottom: 12px">Parchment card</h3>
+            <p>
+              <code>.card-gold</code>: gold-tinted fill for a match or a giving
+              prompt. One per page.
+            </p>
+          </div>
+        </div>
+
+        <div
+          id="give"
+          class="grid-2"
+          style="align-items: start; margin-bottom: 48px"
+        >
+          <div>
+            <h3 style="margin-bottom: 18px">Ruled list</h3>
+            <div class="ruled-list">
+              <div>
+                <div class="label">One time gift</div>
+                <p>
+                  Unrestricted. The Board directs it where it is needed most.
+                </p>
+              </div>
+              <div>
+                <div class="label">Monthly</div>
+                <p>A scheduled monthly gift sustains the Foundation's work.</p>
+              </div>
+              <div>
+                <div class="label">Employer match</div>
+                <p>Check whether your employer will double your gift.</p>
+              </div>
+            </div>
+            <h3 style="margin: 40px 0 18px">Steps</h3>
+            <div class="steps">
+              <div>
+                <div class="serial">01</div>
+                <div>
+                  <div class="h3" style="font-size: 18px; margin-bottom: 6px">
+                    Submit a one-page request
+                  </div>
+                  <p>
+                    What you need, what it costs, and how many students it
+                    reaches.
+                  </p>
+                </div>
+              </div>
+              <div>
+                <div class="serial">02</div>
+                <div>
+                  <div class="h3" style="font-size: 18px; margin-bottom: 6px">
+                    Board review
+                  </div>
+                  <p>The board reviews with school leadership and votes.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="padding: 38px 38px 40px">
+            <h3 style="font-size: 27px; margin-bottom: 26px">Make a gift</h3>
+            <form
+              style="display: flex; flex-direction: column; gap: 20px"
+              onsubmit="return false;"
+            >
+              <fieldset class="field" style="border: 0; padding: 0; margin: 0">
+                <legend class="label" style="margin-bottom: 8px">
+                  Gift amount
+                </legend>
+                <div
+                  style="
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 10px;
+                  "
+                >
+                  <button type="button" class="amount-btn" aria-pressed="false">
+                    $50
+                  </button>
+                  <button type="button" class="amount-btn" aria-pressed="false">
+                    $100
+                  </button>
+                  <button type="button" class="amount-btn" aria-pressed="true">
+                    $250
+                  </button>
+                  <button type="button" class="amount-btn" aria-pressed="false">
+                    Other
+                  </button>
+                </div>
+              </fieldset>
+              <div class="field">
+                <label class="label" for="designation">Designation</label>
+                <select id="designation">
+                  <option>Where it's needed most</option>
+                  <option>Auditorium Improvements</option>
+                  <option>Phoenix Fund</option>
+                </select>
+              </div>
+              <div class="field">
+                <label class="label" for="email">Email</label>
+                <input id="email" type="email" placeholder="you@email.com" />
+              </div>
+              <button
+                type="submit"
+                class="btn btn-gold"
+                style="min-height: 52px; margin-top: 4px"
+              >
+                Give $250
+              </button>
+              <p style="font-size: 13px; color: var(--steel)">
+                Sample form; it sends nothing. To give, visit
+                <a href="https://stantonfoundation.org/#give"
+                  >stantonfoundation.org</a
+                >.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="on-dark grid-2"
+        style="background: var(--midnight); align-items: center; gap: 60px"
+      >
+        <div style="border-left: 2px solid var(--gold); padding-left: 32px">
+          <div class="eyebrow" style="margin-bottom: 20px">On dark: quote</div>
+          <blockquote style="margin-bottom: 26px">
+            &ldquo;No gift given from the heart is small.&rdquo;
+          </blockquote>
+          <div style="font-size: 15px; color: var(--silver)">
+            Attribution · role, in silver
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px">
+          <div class="card-navy" style="padding: 26px 24px">
+            <div
+              style="
+                font-family: var(--serif);
+                font-size: 34px;
+                line-height: 1;
+                margin-bottom: 8px;
+              "
+            >
+              100%
+            </div>
+            <p style="font-size: 14px; color: var(--steel-dark)">
+              of every dollar goes to our Blue Devils
+            </p>
+          </div>
+          <div class="card-navy" style="padding: 26px 24px">
+            <div
+              style="
+                font-family: var(--serif);
+                font-size: 34px;
+                line-height: 1;
+                margin-bottom: 8px;
+              "
+            >
+              3&times;
+            </div>
+            <p style="font-size: 14px; color: var(--steel-dark)">
+              National Blue Ribbon School
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="chrome"
+        class="on-dark grid-2"
+        style="
+          background: var(--navy);
+          padding-top: 76px;
+          padding-bottom: 76px;
+          align-items: center;
+        "
+      >
+        <div>
+          <h2
+            style="
+              font-weight: 400;
+              font-size: 42px;
+              margin-bottom: 14px;
+              color: #fff;
+            "
+          >
+            Hear what your giving built
+          </h2>
+          <p style="font-size: 17.5px; max-width: 48ch">
+            Newsletter band: navy, one sentence, one field, one gold button.
+          </p>
+        </div>
+        <form
+          style="display: flex; gap: 12px; flex-wrap: wrap"
+          onsubmit="return false;"
+        >
+          <input
+            placeholder="Email address"
+            aria-label="Email address"
+            style="flex: 1; min-width: 200px; width: auto; min-height: 50px"
+          />
+          <button type="submit" class="btn btn-gold" style="min-height: 50px">
+            Subscribe
+          </button>
+        </form>
+      </section>
+
+      <!-- ============ VOICE ============ -->
+      <section id="voice">
+        <div class="section-head">
+          <h2>Voice</h2>
+          <a href="../guidelines/voice.md" class="text-link"
+            >Voice and writing &rarr;</a
+          >
+        </div>
+        <div class="sg-do-dont">
+          <div class="card card-flagged">
+            <h3>Write like this</h3>
+            <ul>
+              <li>“100% of your gift will go to Stanton.”</li>
+              <li>
+                “Teachers who guide beautiful minds deserve a beautiful space!”
+              </li>
+              <li>“Stanton is, and always will be, your home.”</li>
+              <li>
+                Name the thing: the faculty lounge, the auditorium shades, the
+                Phoenix Fund.
+              </li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Not like this</h3>
+            <ul>
+              <li>
+                “Empowering tomorrow's leaders through transformative giving.”
+              </li>
+              <li>
+                “Your support makes a difference.” (Which support? What
+                difference?)
+              </li>
+              <li>
+                Urgency the facts don't support: “Last chance!” when it isn't.
+              </li>
+              <li>Figures you can't source.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <div class="logo-lockup" style="margin-bottom: 16px">
+            <img
+              src="../assets/logo/scpf-mark-144.png"
+              alt=""
+              style="width: 46px; height: 46px"
+            />
+            <span
+              style="
+                font-family: var(--serif);
+                font-size: 19px;
+                color: #fff;
+                line-height: 1.2;
+              "
+              >Stanton College Preparatory Foundation</span
+            >
+          </div>
+          <p>
+            1149 West 13th Street<br />Jacksonville, FL 32209<br />A 501(c)(3)
+            organization &middot; EIN 42-3219928
+          </p>
+        </div>
+        <div class="footer-col">
+          <div class="col-title">Guidelines</div>
+          <a href="../guidelines/logo.md">Logo</a>
+          <a href="../guidelines/color.md">Color</a>
+          <a href="../guidelines/typography.md">Typography</a>
+          <a href="../guidelines/layout.md">Layout</a>
+        </div>
+        <div class="footer-col">
+          <div class="col-title">More</div>
+          <a href="../guidelines/components.md">Components</a>
+          <a href="../guidelines/photography.md">Photography</a>
+          <a href="../guidelines/voice.md">Voice and writing</a>
+          <a href="../guidelines/accessibility.md">Accessibility</a>
+        </div>
+        <div class="footer-col">
+          <div class="col-title">Source</div>
+          <a href="../tokens/tokens.json">Tokens (JSON)</a>
+          <a href="../css/scpf.css">Stylesheet</a>
+          <a href="../handoff/design_handoff_scpf_website/index.html"
+            >Original handoff</a
+          >
+          <a href="https://stantonfoundation.org">stantonfoundation.org</a>
+        </div>
+      </div>
+      <div
+        style="
+          padding-top: 26px;
+          display: flex;
+          justify-content: space-between;
+          gap: 20px;
+          flex-wrap: wrap;
+          font-size: 13px;
+        "
+      >
+        <span>&copy; 2026 Stanton College Preparatory Foundation.</span>
+        <a href="#top" style="color: var(--gold)">Back to top &uarr;</a>
+      </div>
+    </footer>
+
+    <script>
+      // Hamburger: toggles the collapsed nav below 960px.
+      const header = document.querySelector(".site-header");
+      const toggle = header.querySelector(".nav-toggle");
+      toggle.addEventListener("click", () => {
+        const open = header.classList.toggle("menu-open");
+        toggle.setAttribute("aria-expanded", String(open));
+      });
+      // Amount picker: one selected at a time.
+      document.querySelectorAll(".amount-btn").forEach((btn, _, all) => {
+        btn.addEventListener("click", () =>
+          all.forEach((b) => b.setAttribute("aria-pressed", String(b === btn))),
+        );
+      });
+    </script>
+  </body>
+</html>
