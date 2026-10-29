@@ -32,11 +32,13 @@ Icons for browsers live in `assets/icons/`: `favicon.ico` (32×32), `icon-192.pn
 - Do not put the mark in a box or on a white chip on a dark ground. Use a dark variant or the transparent PNG instead.
 - Do not rotate, skew or crop the knot, or rearrange the arc type.
 - Do not set the knot on photographs unless the area behind it is a calm, dark field.
-- Keep clear space on every side equal to at least a quarter of the knot's width.
-- Minimum size: the knot alone at 32px tall on screen; the full lockup at 120px wide on screen or 1 inch in print.
+  The Foundation has not set clear-space or minimum-size rules. Until it does, use these defaults:
+
+- Clear space on every side of at least a quarter of the knot's width.
+- The knot alone no smaller than 32px tall on screen. The full lockup no smaller than 120px wide on screen, or 1 inch in print.
 
 ## About the files
 
-The SVGs are not true vector artwork. Each one wraps embedded raster images (their metadata identifies Canva AI as the source tool), so they scale only as far as the embedded image resolution. They also run 0.8–1.6 MB each, which is too heavy for web pages; that is why the site uses the 20 KB PNG.
+The SVG files contain embedded raster images, not vector paths. They scale only as far as the embedded images allow, and at 0.8 to 1.6 MB each they are too heavy for web pages. The site uses the 20 KB PNG for that reason.
 
-Open item: commission a vector master of the knot and the arc lockup, plus a one-color version for embroidery, engraving and fax-quality print. Until that exists, there is no approved one-color logo.
+Open item: a vector master of the knot and the arc lockup, and a one-color version for embroidery, engraving and single-color print. Until those exist, there is no approved one-color logo.

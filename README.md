@@ -2,7 +2,7 @@
 
 The design system and style guide for the Stanton College Preparatory Foundation: logo files, color and type tokens, the component stylesheet, and the written rules for using them.
 
-The public website at `stantonfoundation.org` (repo `stantonfoundation/website`) is the first and main user of this system. Where the site and the original design handoff disagree, this repo follows the site, because the site's changes fixed real problems. Each difference is recorded in `CHANGELOG.md`.
+The Foundation's website, <https://stantonfoundation.org>, is the main user of this system. Where the site and the original design handoff disagree, this repo follows the site, because the site's changes fixed real problems. `CHANGELOG.md` records each difference.
 
 ## Start here
 

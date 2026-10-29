@@ -1,6 +1,6 @@
 # Layout
 
-The look is editorial and institutional: squared corners, hairline rules, generous space, no shadows.
+Squared corners, hairline rules, plenty of space and no shadows.
 
 ## Principles
 

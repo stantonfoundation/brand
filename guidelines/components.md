@@ -1,6 +1,6 @@
 # Components
 
-Every component is a class in `css/scpf.css`. `style-guide/index.html` shows each one rendered. The site's markup is the reference implementation: `../website/src/layouts/Base.astro` for chrome and `../website/src/pages/index.astro` for page sections.
+Every component is a class in `css/scpf.css`, and `style-guide/index.html` shows each one rendered. The Foundation's website, <https://stantonfoundation.org>, uses all of them and is the reference for how they fit together.
 
 ## Buttons
 

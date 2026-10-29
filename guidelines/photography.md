@@ -23,4 +23,4 @@ Photos show real Stanton life: students, teachers, alumni, the campus, the work 
 
 ## Consent
 
-Most subjects are minors. Use only photos the school has cleared for publication under its media-release process, and do not name students in captions without that clearance.
+Many subjects are students, most of them minors. Do not publish a photo of an identifiable person without a release on file, and do not name a student in a caption without one.

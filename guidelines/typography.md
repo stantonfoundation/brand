@@ -42,7 +42,7 @@ Note the naming offset carried over from the handoff: the HTML element `h2` uses
 
 - Headings are serif; everything you click is sans.
 - Set headlines in sentence case. Uppercase belongs to labels, eyebrows and nav only, always tracked.
-- Keep body measure to about 50–70 characters (`max-width: 50ch` on leads).
+- Keep body measure to about 50 to 70 characters (`max-width: 50ch` on leads).
 - Figures in meters and tables use tabular numerals (`font-variant-numeric: tabular-nums`).
-- Use real typographic punctuation: curly quotes, en dashes in ranges (2025–26), em dashes without spaces, the × sign.
+- In display type, use the × sign for multiples (3×), not the letter x.
 - Do not use Newsreader below 15px or Instrument Sans above 21px for headings.
