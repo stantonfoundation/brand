@@ -88,11 +88,11 @@ pnpm format        # Prettier, rewriting files
 pnpm build:pages   # the published style guide, in _site/
 ```
 
-The `build` workflow runs all of these, plus actionlint, on every push and pull request. Merge only when it passes.
+The `build` workflow runs all of these, plus actionlint, on every push and pull request. Merge only when it passes. `handoff/` is excluded from every check, so it stays byte-identical to the original zip.
 
 ## Publishing
 
-Every push to `main` that passes `build` publishes the style guide to GitHub Pages (`pages.yml`). The published copy leaves out `handoff/`, whose homepage has placeholder figures, and links the guidelines to GitHub, which renders the Markdown. To publish again without a change, run the Pages workflow on `main` from the Actions tab. `handoff/` is excluded from every check, so it stays byte-identical to the original zip.
+Every push to `main` that passes `build` publishes the style guide to GitHub Pages (`pages.yml`). The published copy leaves out `handoff/`, whose homepage has placeholder figures, and links the guidelines to GitHub, which renders the Markdown. To publish again without a change, run the Pages workflow on `main` from the Actions tab.
 
 ## Changing the system
 
