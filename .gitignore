@@ -2,6 +2,8 @@
 node_modules/
 # Published style guide (pnpm build:pages)
 _site/
+# Brand kit zip (pnpm build:kit)
+_kit/
 
 # macOS
 .DS_Store

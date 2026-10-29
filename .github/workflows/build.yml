@@ -5,8 +5,8 @@ name: Build
 # protection can require it by name: keep the job name `build`.
 #
 # It runs the formatters in check mode, the token and contrast checks
-# (pnpm test), the Pages build, a link check over the Markdown and HTML,
-# and actionlint over the workflows.
+# (pnpm test), the Pages and brand kit builds, the release-notes check, a
+# link check over the Markdown and HTML, and actionlint over the workflows.
 #
 # `pages` runs only after `build` passes, only on pushes to `main`. It
 # publishes the style guide (pages.yml).
@@ -34,8 +34,12 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm lint
       - run: pnpm test
-      # The same script pages.yml runs on main; here it only proves it still works.
+      # The same steps pages.yml and release.yml run; here they only prove
+      # the next publish and the next tag would work.
       - run: pnpm build:pages
+      - run: pnpm build:kit
+      - name: CHANGELOG.md has a section for the package.json version
+        run: node scripts/release-notes.mjs "v$(node -p 'require("./package.json").version')" > /dev/null
 
       - uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
         with:
