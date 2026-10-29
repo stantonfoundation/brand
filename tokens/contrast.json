@@ -13,8 +13,18 @@
       "min": 4.5,
       "use": "Headings and default text"
     },
-    { "fg": "slate", "bg": "white", "min": 4.5, "use": "Body copy" },
-    { "fg": "slate", "bg": "paper", "min": 4.5, "use": "Body copy" },
+    {
+      "fg": "slate",
+      "bg": "white",
+      "min": 4.5,
+      "use": "Body copy"
+    },
+    {
+      "fg": "slate",
+      "bg": "paper",
+      "min": 4.5,
+      "use": "Body copy"
+    },
     {
       "fg": "slate",
       "bg": "parchment",
@@ -73,7 +83,7 @@
       "fg": "midnight",
       "bg": "gold-light",
       "min": 4.5,
-      "use": "Donate button hover in the header"
+      "use": "Gold button and header Donate hover"
     },
     {
       "fg": "midnight",
@@ -81,7 +91,12 @@
       "min": 4.5,
       "use": "Selected gift amount"
     },
-    { "fg": "silver", "bg": "navy", "min": 4.5, "use": "Body text on navy" },
+    {
+      "fg": "silver",
+      "bg": "navy",
+      "min": 4.5,
+      "use": "Body text on navy"
+    },
     {
       "fg": "silver",
       "bg": "midnight",
@@ -94,29 +109,47 @@
       "min": 4.5,
       "use": "Milestone labels in the goal meter"
     },
-    { "fg": "steel-dark", "bg": "midnight", "min": 4.5, "use": "Footer text" },
+    {
+      "fg": "steel-dark",
+      "bg": "midnight",
+      "min": 4.5,
+      "use": "Footer text"
+    },
     {
       "fg": "steel-dark",
       "bg": "navy-card",
       "min": 4.5,
       "use": "Muted text in navy cards"
     },
-    { "fg": "gold", "bg": "navy", "min": 4.5, "use": "Eyebrows on navy" },
+    {
+      "fg": "gold",
+      "bg": "navy",
+      "min": 4.5,
+      "use": "Eyebrows on navy"
+    },
     {
       "fg": "gold",
       "bg": "midnight",
       "min": 4.5,
       "use": "Eyebrows and the wordmark's Foundation line"
     },
-    { "fg": "gold", "bg": "white", "min": 3, "use": "Large text only" },
-    { "fg": "gold", "bg": "paper", "min": 3, "use": "Large text only" },
-    { "fg": "white", "bg": "gold", "min": 3, "use": "Large text only" },
+    {
+      "fg": "gold",
+      "bg": "white",
+      "min": 3,
+      "use": "Large text only"
+    },
+    {
+      "fg": "gold",
+      "bg": "paper",
+      "min": 3,
+      "use": "Large text only"
+    },
     {
       "fg": "white",
-      "bg": "gold-dark",
-      "min": 4.5,
-      "use": "Gold button hover",
-      "exception": "Open item: .btn-gold:hover sets 15.5px text"
+      "bg": "gold",
+      "min": 3,
+      "use": "Large text only"
     },
     {
       "fg": "devil-blue",
@@ -131,11 +164,16 @@
       "use": "Focus ring on dark grounds"
     },
     {
-      "fg": "silver",
+      "fg": "field-border",
       "bg": "white",
       "min": 3,
-      "use": "Input and gift-amount borders",
-      "exception": "Open item: WCAG 1.4.11 asks 3:1 for the edge of a control"
+      "use": "Input, select and gift-amount borders"
+    },
+    {
+      "fg": "field-border",
+      "bg": "paper",
+      "min": 3,
+      "use": "Field borders on the page ground"
     }
   ]
 }

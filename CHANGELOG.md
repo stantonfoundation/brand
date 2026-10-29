@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Field borders use a new token, `--field-border` (`#878F9E`, 3.25:1 on white), instead of silver (1.62:1). Inputs, selects and gift-amount buttons now meet WCAG 1.4.11.
+- On hover, `.btn-gold` lightens to `--gold-light` and keeps its midnight text (6.92:1), as the header Donate button already did. The old hover, white on `--gold-dark`, was 4.27:1.
+- `--gold-dark` is no longer used by the components. It stays, so existing references still resolve.
+
 ## 1.0.0 — 2026-10-29
 
 First release of the brand repo. It brings together the original design handoff (`handoff/design_handoff_scpf_website/`) and the refinements the website made to it between August and October 2026.

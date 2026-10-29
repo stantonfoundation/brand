@@ -208,8 +208,8 @@ blockquote,
   color: var(--midnight);
 }
 .btn-gold:hover {
-  background: var(--gold-dark);
-  color: #fff;
+  background: var(--gold-light);
+  color: var(--midnight);
 }
 .btn-navy {
   background: var(--navy);
@@ -256,7 +256,7 @@ select {
   font-size: var(--size-input);
   color: var(--navy);
   padding: 13px 14px;
-  border: 1px solid var(--silver);
+  border: 1px solid var(--field-border);
   background: #fff;
   min-height: var(--space-tap-target);
   width: 100%;
@@ -277,7 +277,7 @@ select:focus,
 .amount-btn {
   font-family: var(--sans);
   padding: 14px 0;
-  border: 1px solid var(--silver);
+  border: 1px solid var(--field-border);
   background: #fff;
   font-size: var(--size-body);
   font-weight: 500;
