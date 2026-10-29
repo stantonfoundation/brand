@@ -15,6 +15,7 @@ Rules for coding agents working in this repo. Read `README.md` first. This file 
 - Do not add `border-radius` or `box-shadow` to components.
 - Do not use gold for anything that is not a giving action. See `guidelines/color.md`.
 - Do not set gold text on a light ground below 24px. It measures about 3:1.
+- Do not put site chrome or fundraising pieces in the style guide: no header with a Donate button, no goal meter, no gift form, no figures. It must not look like the Foundation's website. Show components as samples in `.specimen` frames.
 - Do not reference `assets/logo/source/scpf-logo.png` from a web page. It is 1.8 MB.
 - Do not invent figures, dates or names in examples. Take them from the website's content files (`../website/src/content/`) or mark them as placeholders.
 

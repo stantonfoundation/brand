@@ -6,7 +6,7 @@ The Foundation's website, <https://stantonfoundation.org>, is the main user of t
 
 ## Start here
 
-- **See it:** <https://stantonfoundation.github.io/brand/>. The style guide renders every token and component from the real stylesheet. To see a change before it merges, open `style-guide/index.html` through a local server (below).
+- **See it:** <https://stantonfoundation.github.io/brand/>. The style guide is a one-page reference: logo files, colors, type and the basic components, drawn with the real stylesheet. To see a change before it merges, open `style-guide/index.html` through a local server (below).
 - **Read the rules:** `guidelines/`.
 - **Build with it:** link `css/scpf.css` and load the two fonts.
 
@@ -41,7 +41,7 @@ guidelines/
   voice.md         Names, tagline, how the Foundation writes
   accessibility.md WCAG 2.2 AA rules and open items
 style-guide/
-  index.html       The living style guide
+  index.html       The published one-page reference
 handoff/
   design_handoff_scpf_website/   The original design handoff, unchanged
 scripts/
