@@ -1,14 +1,16 @@
 # Changelog
 
-## Unreleased
-
-- The style guide is published at <https://stantonfoundation.github.io/brand/> on every push to `main` that passes `build`.
-- `pnpm test` checks contrast. Every color pair in use is listed in `tokens/contrast.json` with the ratio it needs; the check computes each from `tokens/tokens.json` and generates the table in `guidelines/color.md`. It found one new failure: silver input borders on white, 1.62:1 against the 3:1 WCAG asks for the edge of a control. It is an open item in `guidelines/accessibility.md`.
-- CI: the `build` workflow runs Prettier, markdownlint, the token check, a link check and actionlint on every push and pull request. `package.json` pins pnpm and the lint tools.
-
 ## 1.0.0 — 2026-10-29
 
 First release of the brand repo. It brings together the original design handoff (`handoff/design_handoff_scpf_website/`) and the refinements the website made to it between August and October 2026.
+
+### Repo
+
+- The repo is a package, `@stantonfoundation/brand`. Install it by tag; it exports `scpf.css`, `tokens.css`, `tokens.json` and `assets/*`.
+- Every `v*` tag publishes a GitHub Release with a brand kit zip: logo files, icons, share card, color tokens and guidelines.
+- The style guide is published at <https://stantonfoundation.github.io/brand/> on every push to `main` that passes `build`.
+- `pnpm test` checks contrast. Every color pair in use is listed in `tokens/contrast.json` with the ratio it needs; the check computes each from `tokens/tokens.json` and generates the table in `guidelines/color.md`. It found one new failure: silver input borders on white, 1.62:1 against the 3:1 WCAG asks for the edge of a control. It is an open item in `guidelines/accessibility.md`.
+- CI: the `build` workflow runs Prettier, markdownlint, the token check, a link check and actionlint on every push and pull request. `package.json` pins pnpm and the lint tools.
 
 ### Differences from the original handoff
 

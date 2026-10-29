@@ -1,6 +1,6 @@
 # Link check for the Markdown and HTML (pnpm check:links, and CI).
 # handoff/ stays verbatim, so a broken link there would never be fixed.
-exclude_path = ["handoff", "node_modules", "_site"]
+exclude_path = ["handoff", "node_modules", "_site", "_kit"]
 
 exclude = [
   # Preconnect hints, not pages.

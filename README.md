@@ -48,9 +48,12 @@ scripts/
   check-tokens.mjs   Fails if tokens.json and tokens.css disagree
   check-contrast.mjs Fails if a color pair falls short; writes the color.md table
   build-pages.mjs    Assembles the published style guide in _site/
+  build-kit.mjs      Builds the brand kit zip in _kit/
+  release-notes.mjs  Prints a version's CHANGELOG.md section
 .github/workflows/
   build.yml        The `build` check: lint, tests, links, actionlint
   pages.yml        Publishes the style guide after `build` passes on main
+  release.yml      Publishes a GitHub Release with the brand kit on a v* tag
 ```
 
 ## The system in brief
@@ -74,6 +77,27 @@ scripts/
 
 Then compose sections from the classes in `guidelines/components.md`. To use only the tokens (in another framework, or in email), take `tokens/tokens.css` or `tokens/tokens.json`.
 
+## Installing the package
+
+The repo is a package, `@stantonfoundation/brand`. It is not on the npm registry; install it from GitHub by tag:
+
+```bash
+pnpm add github:stantonfoundation/brand#v1.0.0
+```
+
+| Import                                 | File                                   |
+| -------------------------------------- | -------------------------------------- |
+| `@stantonfoundation/brand/scpf.css`    | The system stylesheet, tokens included |
+| `@stantonfoundation/brand/tokens.css`  | Tokens only, as CSS custom properties  |
+| `@stantonfoundation/brand/tokens.json` | Tokens only, as W3C design tokens      |
+| `@stantonfoundation/brand/assets/*`    | Logo files, icons and the share card   |
+
+The package leaves out the guidelines, the handoff and the 1.8 MB source logo. It has no dependencies and no install scripts.
+
+## Getting the files without code
+
+Every release has a brand kit zip attached: the logo files (with the 2000×2000 source), icons, share card, color values and guidelines. Download it from the latest release on GitHub: <https://github.com/stantonfoundation/brand/releases/latest>.
+
 ## Checks
 
 Requires Node 22.12 or later and pnpm 11 or later. The pnpm version is pinned in `package.json`.
@@ -86,6 +110,7 @@ pnpm contrast      # rewrite the contrast table in guidelines/color.md
 pnpm check:links   # link check; needs lychee installed locally
 pnpm format        # Prettier, rewriting files
 pnpm build:pages   # the published style guide, in _site/
+pnpm build:kit     # the brand kit zip, in _kit/
 ```
 
 The `build` workflow runs all of these, plus actionlint, on every push and pull request. Merge only when it passes. `handoff/` is excluded from every check, so it stays byte-identical to the original zip.
@@ -103,9 +128,18 @@ Every push to `main` that passes `build` publishes the style guide to GitHub Pag
 5. Update the guideline that describes the change, and add a line to `CHANGELOG.md`.
 6. The website keeps its own copy of the stylesheet (`src/styles/styles.css`). Make the matching change there in a pull request to the website repo.
 
+## Releasing
+
+A release is a version tag. The website pins a tag, so nothing reaches the website until someone tags a release and the website takes the update.
+
+1. In a pull request, set the new version in `package.json` and rename the top `CHANGELOG.md` section to that version and date (`## 1.1.0 — 2026-11-12`). Use a minor version for additions and a major version for anything that changes how the site looks or renames a class or token.
+2. Merge it into `main`.
+3. Tag the merge commit and push the tag: `git tag v1.1.0 && git push origin v1.1.0`.
+4. `release.yml` publishes the GitHub Release with the brand kit attached. It refuses a tag that is not on `main`, does not match `package.json`, or has no changelog section.
+
 ## Relationship to the website
 
-The website does not import from this repo yet. Its stylesheet is a superset of `css/scpf.css`: the same tokens and components, plus pieces that only make sense on the site (the Facebook video card, Keystatic draft-mode placeholders, the confetti canvas). Keep the two in step by hand until the site consumes this repo directly.
+The website does not import from this repo yet. Its stylesheet is a superset of `css/scpf.css`: the same tokens and components, plus pieces that only make sense on the site (the Facebook video card, Keystatic draft-mode placeholders, the confetti canvas). Until the website installs this package, keep the two in step by hand.
 
 ## Open items
 
