@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Dependabot proposes weekly updates for the dev tools and the workflow actions, with a seven-day cooldown.
+
 ## 1.0.0 — 2026-10-29
 
 First release of the brand repo. It brings together the original design handoff (`handoff/design_handoff_scpf_website/`) and the refinements the website made to it between August and October 2026.
