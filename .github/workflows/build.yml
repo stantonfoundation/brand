@@ -5,8 +5,11 @@ name: Build
 # protection can require it by name: keep the job name `build`.
 #
 # It runs the formatters in check mode, the token and contrast checks
-# (pnpm test), a link check over the Markdown and HTML, and actionlint
-# over the workflows. Nothing here builds or deploys anything.
+# (pnpm test), the Pages build, a link check over the Markdown and HTML,
+# and actionlint over the workflows.
+#
+# `pages` runs only after `build` passes, only on pushes to `main`. It
+# publishes the style guide (pages.yml).
 on:
   push:
     branches: [main]
@@ -31,6 +34,8 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm lint
       - run: pnpm test
+      # The same script pages.yml runs on main; here it only proves it still works.
+      - run: pnpm build:pages
 
       - uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
         with:
@@ -38,3 +43,12 @@ jobs:
           fail: true
 
       - uses: raven-actions/actionlint@3d39aea434753780c3b3d4a1a31c854b4dbf49d7 # v2.2.0
+
+  pages:
+    needs: build
+    if: github.event_name == 'push'
+    uses: ./.github/workflows/pages.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write

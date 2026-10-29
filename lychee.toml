@@ -1,9 +1,14 @@
 # Link check for the Markdown and HTML (pnpm check:links, and CI).
-# handoff/ stays verbatim; its links point at anchors in a page that no
-# longer exists anywhere else.
-exclude_path = ["handoff", "node_modules"]
+# handoff/ stays verbatim, so a broken link there would never be fixed.
+exclude_path = ["handoff", "node_modules", "_site"]
 
-# Preconnect hints, not pages.
-exclude = ["^https://fonts\\.googleapis\\.com/?$", "^https://fonts\\.gstatic\\.com/?$"]
+exclude = [
+  # Preconnect hints, not pages.
+  "^https://fonts\\.googleapis\\.com/?$",
+  "^https://fonts\\.gstatic\\.com/?$",
+  # The published style guide. It is built from this repo after merge, so
+  # a link to a new page there 404s until then.
+  "^https://stantonfoundation\\.github\\.io/brand/",
+]
 
 include_fragments = "full"
