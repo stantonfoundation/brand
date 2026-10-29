@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- The style guide is published at <https://stantonfoundation.github.io/brand/> on every push to `main` that passes `build`.
 - `pnpm test` checks contrast. Every color pair in use is listed in `tokens/contrast.json` with the ratio it needs; the check computes each from `tokens/tokens.json` and generates the table in `guidelines/color.md`. It found one new failure: silver input borders on white, 1.62:1 against the 3:1 WCAG asks for the edge of a control. It is an open item in `guidelines/accessibility.md`.
 - CI: the `build` workflow runs Prettier, markdownlint, the token check, a link check and actionlint on every push and pull request. `package.json` pins pnpm and the lint tools.
 

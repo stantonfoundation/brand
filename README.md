@@ -6,7 +6,7 @@ The Foundation's website, <https://stantonfoundation.org>, is the main user of t
 
 ## Start here
 
-- **See it:** open `style-guide/index.html` through a local server (below). It renders every token and component from the real stylesheet.
+- **See it:** <https://stantonfoundation.github.io/brand/>. The style guide renders every token and component from the real stylesheet. To see a change before it merges, open `style-guide/index.html` through a local server (below).
 - **Read the rules:** `guidelines/`.
 - **Build with it:** link `css/scpf.css` and load the two fonts.
 
@@ -47,8 +47,10 @@ handoff/
 scripts/
   check-tokens.mjs   Fails if tokens.json and tokens.css disagree
   check-contrast.mjs Fails if a color pair falls short; writes the color.md table
+  build-pages.mjs    Assembles the published style guide in _site/
 .github/workflows/
   build.yml        The `build` check: lint, tests, links, actionlint
+  pages.yml        Publishes the style guide after `build` passes on main
 ```
 
 ## The system in brief
@@ -83,9 +85,14 @@ pnpm test          # token and contrast checks
 pnpm contrast      # rewrite the contrast table in guidelines/color.md
 pnpm check:links   # link check; needs lychee installed locally
 pnpm format        # Prettier, rewriting files
+pnpm build:pages   # the published style guide, in _site/
 ```
 
 The `build` workflow runs all of these, plus actionlint, on every push and pull request. Merge only when it passes. `handoff/` is excluded from every check, so it stays byte-identical to the original zip.
+
+## Publishing
+
+Every push to `main` that passes `build` publishes the style guide to GitHub Pages (`pages.yml`). The published copy leaves out `handoff/`, whose homepage has placeholder figures, and links the guidelines to GitHub, which renders the Markdown. To publish again without a change, run the Pages workflow on `main` from the Actions tab.
 
 ## Changing the system
 

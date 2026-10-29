@@ -6,5 +6,5 @@
   },
   "globs": ["**/*.md"],
   // handoff/ stays verbatim. CLAUDE.md is a single @AGENTS.md import.
-  "ignores": ["handoff/**", "node_modules/**", "CLAUDE.md"],
+  "ignores": ["handoff/**", "node_modules/**", "_site/**", "CLAUDE.md"],
 }

@@ -12,7 +12,8 @@
     "format": "prettier --write .",
     "test": "node scripts/check-tokens.mjs && node scripts/check-contrast.mjs",
     "check:links": "lychee --config lychee.toml \"**/*.md\" \"**/*.html\"",
-    "contrast": "node scripts/check-contrast.mjs --write && prettier --write guidelines/color.md"
+    "contrast": "node scripts/check-contrast.mjs --write && prettier --write guidelines/color.md",
+    "build:pages": "node scripts/build-pages.mjs"
   },
   "devDependencies": {
     "markdownlint-cli2": "^0.24.0",

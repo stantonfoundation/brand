@@ -1,5 +1,7 @@
 # Build
 node_modules/
+# Published style guide (pnpm build:pages)
+_site/
 
 # macOS
 .DS_Store
