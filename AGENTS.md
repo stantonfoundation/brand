@@ -22,6 +22,7 @@ Rules for coding agents working in this repo. Read `README.md` first. This file 
 ## Before you finish
 
 - Use pnpm. Do not use npm or yarn.
+- Pin every dependency to an exact version. `pnpm add` does this here; do not hand-write a range.
 - Run `pnpm lint` and `pnpm test`. Both must pass.
 - If you changed a workflow, run `actionlint .github/workflows/*.yml`.
 - Serve the repo (`python3 -m http.server`) and look at `index.html` at desktop width and below 960px.

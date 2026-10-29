@@ -1,0 +1,4 @@
+# pnpm settings (pnpm 10+ reads these here, not from package.json).
+# Save exact versions: every dependency is pinned, and a version changes
+# only in a pull request, from Dependabot or a person.
+saveExact: true
