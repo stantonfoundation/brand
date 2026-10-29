@@ -156,6 +156,6 @@ The website does not import from this repo yet. Its stylesheet is a superset of 
 
 ## Open items
 
-- A vector master of the logo, and a one-color version. The current SVGs wrap raster images. See `guidelines/logo.md`.
-- Print color values (CMYK, Pantone).
+- A vector master of the logo, and a one-color version: deferred. Until then the logo is for screens and full-color print only. See `guidelines/logo.md`.
+- Print colors are provisional until a printer proofs them, and there are no Pantone values yet. See `guidelines/color.md`.
 - Templates for letterhead, slides and social posts.

@@ -102,4 +102,20 @@ What follows from the table:
 
 ## Print
 
-No print (CMYK or Pantone) values have been specified. Until they are, convert from the hex values above and proof gold and navy on the actual stock: gold in particular shifts on uncoated paper.
+These values are **provisional**. The CMYK figures are straight conversions from the hex values, not output from a press profile, and no printer has proofed them yet. Ask the printer to proof navy and gold on the actual stock before the first run; gold in particular shifts on uncoated paper. Replace these figures with the proofed ones once a printer confirms them.
+
+There are no Pantone values yet. Match each color on a physical Pantone guide when the first spot-color job is proofed; a match read off a screen is not reliable.
+
+| Color      | Hex       | CMYK (provisional) | Pantone                   |
+| ---------- | --------- | ------------------ | ------------------------- |
+| Navy       | `#16213C` | 63 45 0 76         | Match on a physical guide |
+| Midnight   | `#0F172B` | 65 47 0 83         | Match on a physical guide |
+| Devil blue | `#274270` | 65 41 0 56         | Match on a physical guide |
+| Gold       | `#B4883C` | 0 24 67 29         | Match on a physical guide |
+| Parchment  | `#F3EADA` | 0 4 10 5           | Match on a physical guide |
+| Slate      | `#4A5567` | 28 17 0 60         | Match on a physical guide |
+| Steel      | `#5E6A80` | 27 17 0 50         | Match on a physical guide |
+| Silver     | `#C6CBD3` | 6 4 0 17           | Match on a physical guide |
+| Platinum   | `#E2E4E8` | 3 2 0 9            | Match on a physical guide |
+
+In print, the paper is the ground: use the stock's own white instead of printing paper (`#F8F8F6`).

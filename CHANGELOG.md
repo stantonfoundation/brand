@@ -5,6 +5,8 @@
 - Field borders use a new token, `--field-border` (`#878F9E`, 3.25:1 on white), instead of silver (1.62:1). Inputs, selects and gift-amount buttons now meet WCAG 1.4.11.
 - On hover, `.btn-gold` lightens to `--gold-light` and keeps its midnight text (6.92:1), as the header Donate button already did. The old hover, white on `--gold-dark`, was 4.27:1.
 - `--gold-dark` is no longer used by the components. It stays, so existing references still resolve.
+- `color.md` lists provisional CMYK values for the palette, to be replaced once a printer proofs them. Pantone values are to be matched on a physical guide.
+- The vector and one-color logo are deferred. Until they exist, the logo is for screens and full-color print only.
 
 ## 1.0.0 — 2026-10-29
 
