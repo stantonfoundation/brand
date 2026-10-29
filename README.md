@@ -121,7 +121,7 @@ Dependabot (`.github/dependabot.yml`) proposes updates weekly for the dev tools 
 
 ## Publishing
 
-Every push to `main` that passes `build` publishes the style guide to GitHub Pages (`pages.yml`). It is served at <https://brand.stantonfoundation.org>; the address is a CNAME in the foundation's Cloudflare DNS (DNS only, not proxied) and the custom domain is set under **Settings → Pages**. The published copy leaves out `handoff/`, whose homepage has placeholder figures, and links the guidelines to GitHub, which renders the Markdown. To publish again without a change, run the Pages workflow on `main` from the Actions tab.
+Every push to `main` that passes `build` publishes the style guide to GitHub Pages (`pages.yml`). It is served at <https://brand.stantonfoundation.org>. The published copy leaves out `handoff/`, whose homepage has placeholder figures, and links the guidelines to GitHub, which renders the Markdown. To publish again without a change, run the Pages workflow on `main` from the Actions tab.
 
 ## Changing the system
 
