@@ -8,6 +8,7 @@ exclude = [
   "^https://fonts\\.gstatic\\.com/?$",
   # The published style guide. It is built from this repo after merge, so
   # a link to a new page there 404s until then.
+  "^https://brand\\.stantonfoundation\\.org",
   "^https://stantonfoundation\\.github\\.io/brand/",
 ]
 

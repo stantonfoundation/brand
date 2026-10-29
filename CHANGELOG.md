@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- The style guide moves to <https://brand.stantonfoundation.org>.
 - The style guide is a plain one-page reference. It no longer copies the website's header, hero, goal meter, gift form or footer, so it cannot be mistaken for the Foundation's site.
 
 ## 1.0.0 — 2026-10-29

@@ -39,7 +39,7 @@ writeFileSync(
   new URL("README.txt", kit),
   `Stanton College Preparatory Foundation — brand kit ${version}
 
-See the style guide first: https://stantonfoundation.github.io/brand/
+See the style guide first: https://brand.stantonfoundation.org
 
 logo/          Lockups and marks. Pick the file that matches the ground:
                scpf-lockup.svg            full logo, light grounds

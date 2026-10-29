@@ -1,7 +1,12 @@
 name: Pages
 
-# Publishes the style guide to GitHub Pages:
-# https://stantonfoundation.github.io/brand/
+# Publishes the style guide to GitHub Pages: https://brand.stantonfoundation.org
+#
+# The custom domain is a repo setting (Settings > Pages), not a CNAME file:
+# a Pages site deployed by Actions ignores the file. DNS is a CNAME from
+# brand.stantonfoundation.org to stantonfoundation.github.io in the
+# foundation's Cloudflare account, DNS only (not proxied), so GitHub can
+# issue the HTTPS certificate.
 #
 # Called by build.yml after the `build` check passes on a push to `main`,
 # so a change that fails the checks is never published. Can also be run
