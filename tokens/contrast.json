@@ -1,0 +1,141 @@
+{
+  "$description": "Every color pair the system uses, with the WCAG 2 ratio it needs. scripts/check-contrast.mjs computes each ratio from tokens.json, fails when one falls short, and writes the table in guidelines/color.md. min: 4.5 for body text, 3 for large text (24px, or 18.66px bold) and for UI boundaries such as focus rings. A pair with an exception is a known failure: it is reported, not failed, and must be listed in guidelines/accessibility.md.",
+  "pairs": [
+    {
+      "fg": "navy",
+      "bg": "white",
+      "min": 4.5,
+      "use": "Headings and default text"
+    },
+    {
+      "fg": "navy",
+      "bg": "paper",
+      "min": 4.5,
+      "use": "Headings and default text"
+    },
+    { "fg": "slate", "bg": "white", "min": 4.5, "use": "Body copy" },
+    { "fg": "slate", "bg": "paper", "min": 4.5, "use": "Body copy" },
+    {
+      "fg": "slate",
+      "bg": "parchment",
+      "min": 4.5,
+      "use": "Body copy in parchment cards"
+    },
+    {
+      "fg": "steel",
+      "bg": "white",
+      "min": 4.5,
+      "use": "Labels, meta, serials"
+    },
+    {
+      "fg": "steel",
+      "bg": "paper",
+      "min": 4.5,
+      "use": "Labels, meta, serials"
+    },
+    {
+      "fg": "steel",
+      "bg": "parchment",
+      "min": 4.5,
+      "use": "Labels in parchment cards"
+    },
+    {
+      "fg": "devil-blue",
+      "bg": "white",
+      "min": 4.5,
+      "use": "Links, outline buttons, .eyebrow-ink"
+    },
+    {
+      "fg": "devil-blue",
+      "bg": "paper",
+      "min": 4.5,
+      "use": "Links, outline buttons, .eyebrow-ink"
+    },
+    {
+      "fg": "white",
+      "bg": "navy",
+      "min": 4.5,
+      "use": "Navy buttons, headings on dark"
+    },
+    {
+      "fg": "white",
+      "bg": "devil-blue",
+      "min": 4.5,
+      "use": "Navy and outline button hover"
+    },
+    {
+      "fg": "midnight",
+      "bg": "gold",
+      "min": 4.5,
+      "use": "Gold buttons, match banner"
+    },
+    {
+      "fg": "midnight",
+      "bg": "gold-light",
+      "min": 4.5,
+      "use": "Donate button hover in the header"
+    },
+    {
+      "fg": "midnight",
+      "bg": "parchment",
+      "min": 4.5,
+      "use": "Selected gift amount"
+    },
+    { "fg": "silver", "bg": "navy", "min": 4.5, "use": "Body text on navy" },
+    {
+      "fg": "silver",
+      "bg": "midnight",
+      "min": 4.5,
+      "use": "Body text and nav links on midnight"
+    },
+    {
+      "fg": "silver",
+      "bg": "navy-card",
+      "min": 4.5,
+      "use": "Milestone labels in the goal meter"
+    },
+    { "fg": "steel-dark", "bg": "midnight", "min": 4.5, "use": "Footer text" },
+    {
+      "fg": "steel-dark",
+      "bg": "navy-card",
+      "min": 4.5,
+      "use": "Muted text in navy cards"
+    },
+    { "fg": "gold", "bg": "navy", "min": 4.5, "use": "Eyebrows on navy" },
+    {
+      "fg": "gold",
+      "bg": "midnight",
+      "min": 4.5,
+      "use": "Eyebrows and the wordmark's Foundation line"
+    },
+    { "fg": "gold", "bg": "white", "min": 3, "use": "Large text only" },
+    { "fg": "gold", "bg": "paper", "min": 3, "use": "Large text only" },
+    { "fg": "white", "bg": "gold", "min": 3, "use": "Large text only" },
+    {
+      "fg": "white",
+      "bg": "gold-dark",
+      "min": 4.5,
+      "use": "Gold button hover",
+      "exception": "Open item: .btn-gold:hover sets 15.5px text"
+    },
+    {
+      "fg": "devil-blue",
+      "bg": "paper",
+      "min": 3,
+      "use": "Focus ring on light grounds"
+    },
+    {
+      "fg": "silver",
+      "bg": "midnight",
+      "min": 3,
+      "use": "Focus ring on dark grounds"
+    },
+    {
+      "fg": "silver",
+      "bg": "white",
+      "min": 3,
+      "use": "Input and gift-amount borders",
+      "exception": "Open item: WCAG 1.4.11 asks 3:1 for the edge of a control"
+    }
+  ]
+}

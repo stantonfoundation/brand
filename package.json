@@ -10,8 +10,9 @@
   "scripts": {
     "lint": "prettier --check . && markdownlint-cli2",
     "format": "prettier --write .",
-    "test": "node scripts/check-tokens.mjs",
-    "check:links": "lychee --config lychee.toml \"**/*.md\" \"**/*.html\""
+    "test": "node scripts/check-tokens.mjs && node scripts/check-contrast.mjs",
+    "check:links": "lychee --config lychee.toml \"**/*.md\" \"**/*.html\"",
+    "contrast": "node scripts/check-contrast.mjs --write && prettier --write guidelines/color.md"
   },
   "devDependencies": {
     "markdownlint-cli2": "^0.24.0",

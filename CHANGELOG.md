@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- `pnpm test` checks contrast. Every color pair in use is listed in `tokens/contrast.json` with the ratio it needs; the check computes each from `tokens/tokens.json` and generates the table in `guidelines/color.md`. It found one new failure: silver input borders on white, 1.62:1 against the 3:1 WCAG asks for the edge of a control. It is an open item in `guidelines/accessibility.md`.
 - CI: the `build` workflow runs Prettier, markdownlint, the token check, a link check and actionlint on every push and pull request. `package.json` pins pnpm and the lint tools.
 
 ## 1.0.0 — 2026-10-29
@@ -12,7 +13,7 @@ First release of the brand repo. It brings together the original design handoff 
 
 Color
 
-- `--steel` is `#5E6A80`, not `#6C7A93`. The old value measured 4.34:1 on white, under WCAG AA.
+- `--steel` is `#5E6A80`, not `#6C7A93`. The old value measured 4.33:1 on white, under WCAG AA.
 - `.serial` numbers are steel, not gold. Small gold text fails contrast on light grounds.
 - New tokens: `--parchment-rule` (`#E4D3B0`, previously hard-coded on `.card-gold`) and `--white`, plus size, spacing and border tokens.
 - New `.eyebrow-ink` modifier for eyebrows on light grounds.
