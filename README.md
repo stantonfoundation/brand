@@ -28,6 +28,7 @@ assets/
 tokens/
   tokens.json      Design tokens, W3C Design Tokens format (source of truth)
   tokens.css       The same tokens as CSS custom properties
+  contrast.json    Every color pair in use, and the ratio it needs
 css/
   scpf.css         The system stylesheet: imports tokens.css, then every component
 guidelines/
@@ -44,7 +45,8 @@ style-guide/
 handoff/
   design_handoff_scpf_website/   The original design handoff, unchanged
 scripts/
-  check-tokens.mjs Fails if tokens.json and tokens.css disagree
+  check-tokens.mjs   Fails if tokens.json and tokens.css disagree
+  check-contrast.mjs Fails if a color pair falls short; writes the color.md table
 .github/workflows/
   build.yml        The `build` check: lint, tests, links, actionlint
 ```
@@ -77,7 +79,8 @@ Requires Node 22.12 or later and pnpm 11 or later. The pnpm version is pinned in
 ```bash
 pnpm install
 pnpm lint          # Prettier and markdownlint, check only
-pnpm test          # token check
+pnpm test          # token and contrast checks
+pnpm contrast      # rewrite the contrast table in guidelines/color.md
 pnpm check:links   # link check; needs lychee installed locally
 pnpm format        # Prettier, rewriting files
 ```
@@ -89,7 +92,7 @@ The `build` workflow runs all of these, plus actionlint, on every push and pull 
 1. Branch from `main`. Open a pull request into `main`.
 2. Change the token in `tokens/tokens.json` and `tokens/tokens.css`, or the component in `css/scpf.css`. Run `pnpm lint` and `pnpm test`.
 3. Open the style guide and check the change on both light and dark grounds.
-4. If the change affects contrast, re-measure it and update the table in `guidelines/color.md`.
+4. If the change adds or alters a color pair, list it in `tokens/contrast.json` and run `pnpm contrast`.
 5. Update the guideline that describes the change, and add a line to `CHANGELOG.md`.
 6. The website keeps its own copy of the stylesheet (`src/styles/styles.css`). Make the matching change there in a pull request to the website repo.
 
@@ -101,5 +104,5 @@ The website does not import from this repo yet. Its stylesheet is a superset of 
 
 - A vector master of the logo, and a one-color version. The current SVGs wrap raster images. See `guidelines/logo.md`.
 - Print color values (CMYK, Pantone).
-- The `.btn-gold` hover contrast. See `guidelines/accessibility.md`.
+- The `.btn-gold` hover contrast and the input border contrast. See `guidelines/accessibility.md`.
 - Templates for letterhead, slides and social posts.
