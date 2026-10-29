@@ -4,7 +4,7 @@ Rules for coding agents working in this repo. Read `README.md` first. This file 
 
 ## Sources of truth
 
-- Tokens: `tokens/tokens.json`. `tokens/tokens.css` mirrors it. Change both, then run `node scripts/check-tokens.mjs`.
+- Tokens: `tokens/tokens.json`. `tokens/tokens.css` mirrors it. Change both, then run `pnpm test`.
 - Components: `css/scpf.css`.
 - Rules: `guidelines/*.md`. If you change behaviour or a value, update the guideline that describes it in the same change.
 - Reference implementation: the website repo, a sibling folder at `../website` (`src/styles/styles.css`, `src/layouts/Base.astro`, `src/pages/index.astro`). Read it; do not edit it from here.
@@ -20,10 +20,18 @@ Rules for coding agents working in this repo. Read `README.md` first. This file 
 
 ## Before you finish
 
-- Run `node scripts/check-tokens.mjs`. It must pass.
+- Use pnpm. Do not use npm or yarn.
+- Run `pnpm lint` and `pnpm test`. Both must pass.
+- If you changed a workflow, run `actionlint .github/workflows/*.yml`.
 - Serve the repo (`python3 -m http.server`) and look at `style-guide/index.html` at desktop width and below 960px.
 - If you changed a color, re-measure contrast for every pair that uses it and update the table in `guidelines/color.md`.
 - Add a line to `CHANGELOG.md`.
+
+## Conventions
+
+- Branch from `main` and open pull requests into `main`. Do not push to `main`.
+- Keep the CI job name `build`. Branch protection on `main` is meant to require a check with that name.
+- Pin third-party GitHub Actions to a full 40-character commit SHA, with the version tag in a comment.
 
 ## Writing
 

@@ -45,6 +45,8 @@ handoff/
   design_handoff_scpf_website/   The original design handoff, unchanged
 scripts/
   check-tokens.mjs Fails if tokens.json and tokens.css disagree
+.github/workflows/
+  build.yml        The `build` check: lint, tests, links, actionlint
 ```
 
 ## The system in brief
@@ -68,10 +70,24 @@ scripts/
 
 Then compose sections from the classes in `guidelines/components.md`. To use only the tokens (in another framework, or in email), take `tokens/tokens.css` or `tokens/tokens.json`.
 
+## Checks
+
+Requires Node 22.12 or later and pnpm 11 or later. The pnpm version is pinned in `package.json`.
+
+```bash
+pnpm install
+pnpm lint          # Prettier and markdownlint, check only
+pnpm test          # token check
+pnpm check:links   # link check; needs lychee installed locally
+pnpm format        # Prettier, rewriting files
+```
+
+The `build` workflow runs all of these, plus actionlint, on every push and pull request. Merge only when it passes. `handoff/` is excluded from every check, so it stays byte-identical to the original zip.
+
 ## Changing the system
 
-1. Change the token in `tokens/tokens.json` and `tokens/tokens.css`, or the component in `css/scpf.css`.
-2. Run `node scripts/check-tokens.mjs`. It must pass.
+1. Branch from `main`. Open a pull request into `main`.
+2. Change the token in `tokens/tokens.json` and `tokens/tokens.css`, or the component in `css/scpf.css`. Run `pnpm lint` and `pnpm test`.
 3. Open the style guide and check the change on both light and dark grounds.
 4. If the change affects contrast, re-measure it and update the table in `guidelines/color.md`.
 5. Update the guideline that describes the change, and add a line to `CHANGELOG.md`.
