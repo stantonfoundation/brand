@@ -1,0 +1,16 @@
+# Build
+node_modules/
+
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Local agent/project metadata
+.claude/settings.local.json

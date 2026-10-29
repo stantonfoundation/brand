@@ -1,0 +1,886 @@
+/* Stanton College Preparatory Foundation — design system stylesheet.
+   Tokens live in ../tokens/tokens.css; components follow.
+   Fonts: Newsreader (serif) + Instrument Sans (sans), loaded by the page:
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+   Squared corners and hairline rules throughout: no border-radius, no shadows. */
+
+@import url("../tokens/tokens.css");
+
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--navy);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+/* The page must never pan sideways. clip, not hidden: clip forbids
+   scrolling on the axis without creating a scroll container, so the
+   sticky header keeps working. */
+html,
+body {
+  overflow-x: clip;
+  overscroll-behavior-x: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Keyboard focus. Every focusable element gets a visible ring: blue on
+   light surfaces, silver on dark ones, where blue would disappear. */
+:focus-visible {
+  outline: var(--focus) solid var(--devil-blue);
+  outline-offset: 2px;
+}
+.on-dark :focus-visible,
+.site-header :focus-visible,
+.site-footer :focus-visible,
+.photo-reel :focus-visible,
+.card-navy :focus-visible {
+  outline-color: var(--silver);
+}
+main:focus {
+  outline: none;
+}
+
+/* Hidden until focused: the first Tab on any page offers a jump past the
+   header to the page content. */
+.skip-link {
+  position: absolute;
+  left: var(--gutter);
+  top: 0;
+  z-index: 50;
+  background: #fff;
+  color: var(--navy);
+  padding: 10px 16px;
+  font-weight: 600;
+  transform: translateY(-120%);
+}
+.skip-link:focus {
+  transform: none;
+}
+
+a {
+  color: var(--devil-blue);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--gold);
+}
+
+/* ---------- Typography scale ---------- */
+.display {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: var(--size-display);
+  line-height: 1.03;
+  letter-spacing: -0.02em;
+  margin: 0;
+  text-wrap: pretty;
+}
+h2,
+.h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: var(--size-h1);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+h3,
+.h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: var(--size-h2);
+  line-height: 1.2;
+  margin: 0;
+}
+.h3 {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: var(--size-h3);
+  line-height: 1.3;
+}
+.lead {
+  font-size: var(--size-lead);
+  line-height: 1.6;
+  color: var(--slate);
+  text-wrap: pretty;
+}
+p {
+  font-size: var(--size-body);
+  line-height: 1.65;
+  color: var(--slate);
+  margin: 0;
+}
+/* Gold text measures 3:1 on paper. Eyebrows belong on dark surfaces, where
+   gold clears 4.9:1; on light surfaces add .eyebrow-ink. */
+.eyebrow {
+  font-size: var(--size-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.eyebrow::before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: var(--gold);
+}
+.eyebrow-ink {
+  color: var(--devil-blue);
+}
+.label {
+  font-size: var(--size-label);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--slate);
+}
+.stat-number {
+  font-family: var(--serif);
+  font-size: var(--size-stat);
+  line-height: 1;
+}
+.serial {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--steel);
+}
+blockquote,
+.pull-quote {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 34px;
+  line-height: 1.32;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+/* Dark sections */
+.on-dark {
+  color: #fff;
+}
+.on-dark p,
+.on-dark .lead {
+  color: var(--silver);
+}
+/* A white card on a dark section reads as its own light surface — put the
+   inherited text color back, or bare headings inside it render white. */
+.on-dark .card {
+  color: var(--navy);
+}
+.on-dark .card p {
+  color: var(--slate);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  font-family: var(--sans);
+  font-size: var(--size-body);
+  font-weight: 600;
+  padding: 16px 32px;
+  min-height: var(--space-tap-target);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-gold {
+  background: var(--gold);
+  color: var(--midnight);
+}
+.btn-gold:hover {
+  background: var(--gold-dark);
+  color: #fff;
+}
+.btn-navy {
+  background: var(--navy);
+  color: #fff;
+}
+.btn-navy:hover {
+  background: var(--devil-blue);
+  color: #fff;
+}
+.btn-outline {
+  background: transparent;
+  color: var(--devil-blue);
+  border: 1px solid var(--devil-blue);
+}
+.btn-outline:hover {
+  background: var(--devil-blue);
+  color: #fff;
+}
+.btn-outline-light {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.btn-outline-light:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+.text-link {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--devil-blue);
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 2px;
+}
+.text-link:hover {
+  color: var(--gold);
+}
+
+/* ---------- Forms ---------- */
+input,
+select {
+  font-family: var(--sans);
+  font-size: var(--size-input);
+  color: var(--navy);
+  padding: 13px 14px;
+  border: 1px solid var(--silver);
+  background: #fff;
+  min-height: var(--space-tap-target);
+  width: 100%;
+}
+input:focus,
+select:focus,
+.btn:focus-visible {
+  outline: var(--focus) solid var(--devil-blue);
+  outline-offset: 2px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+/* Gift amount picker. The selected amount takes the parchment fill and a
+   gold rule: one of the few places gold appears outside a button. */
+.amount-btn {
+  font-family: var(--sans);
+  padding: 14px 0;
+  border: 1px solid var(--silver);
+  background: #fff;
+  font-size: var(--size-body);
+  font-weight: 500;
+  color: var(--slate);
+  cursor: pointer;
+  min-height: var(--space-tap-target);
+}
+.amount-btn:hover {
+  border-color: var(--devil-blue);
+  color: var(--devil-blue);
+}
+.amount-btn.selected,
+.amount-btn[aria-pressed="true"] {
+  border: 2px solid var(--gold);
+  background: var(--parchment);
+  font-weight: 600;
+  color: var(--midnight);
+}
+/* Email field on a navy band. */
+.on-dark input {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+}
+.on-dark input::placeholder {
+  color: var(--steel-dark);
+}
+
+/* ---------- Cards ---------- */
+.card {
+  background: #fff;
+  border: 1px solid var(--platinum);
+  padding: 32px 34px 34px;
+}
+.card-flagged {
+  border-top: var(--flag) solid var(--navy);
+}
+.card-navy {
+  background: var(--navy-card);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+.card-gold {
+  background: var(--parchment);
+  border: 1px solid var(--parchment-rule);
+}
+
+/* ---------- Lists with rules ---------- */
+/* Label column + description, one hairline per row ("Ways to give"). */
+.ruled-list {
+  border-top: 1px solid var(--platinum);
+}
+.ruled-list > * {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--platinum);
+}
+.ruled-list .label {
+  color: var(--steel);
+  letter-spacing: 0.14em;
+  padding-top: 2px;
+}
+/* Numbered steps: serial + heading + text. */
+.steps > * {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 22px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--platinum);
+}
+.steps .serial {
+  font-size: 22px;
+}
+
+/* ---------- Layout ---------- */
+section,
+.section {
+  padding: var(--space-section) var(--gutter);
+}
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--platinum);
+  padding-bottom: 20px;
+  margin-bottom: var(--space-section-head);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-grid-2);
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-grid-3);
+}
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-grid-4);
+}
+
+/* ---------- Site chrome ---------- */
+.match-banner {
+  background: var(--gold);
+  color: var(--midnight);
+  padding: 11px var(--gutter);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  font-size: 13.5px;
+  font-weight: 600;
+  flex-wrap: wrap;
+}
+.match-banner a {
+  color: var(--midnight);
+  border-bottom: 1px solid rgba(15, 23, 43, 0.4);
+}
+
+.site-header {
+  background: var(--midnight);
+  color: #fff;
+  padding: 24px var(--gutter);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Logo lockup: the transparent mark beside a two-line wordmark. */
+.logo-lockup {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #fff;
+  flex-shrink: 0;
+}
+.logo-lockup img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+.logo-lockup .wordmark {
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+/* Own block with line-height 1, so the serif line box opens no gap above
+   it. margin-left is optical: the serif S above starts its ink ~1px into
+   its box; nudge the sans F right so the stems align to the eye. */
+.logo-lockup .sub {
+  display: block;
+  line-height: 1;
+  margin-top: 2px;
+  margin-left: 1.5px;
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+}
+/* Header size: the mark and wordmark read as the site's identity rather
+   than incidental chrome. */
+.logo-lockup-lg img {
+  width: 72px;
+  height: 72px;
+}
+.logo-lockup-lg .wordmark {
+  font-size: 32px;
+  line-height: 1.08;
+}
+.logo-lockup-lg .sub {
+  font-size: 15px;
+  letter-spacing: 0.2em;
+}
+
+/* -5px seats the link baselines on the large wordmark's first-line
+   baseline (measured at both the 32px and 27px wordmark sizes). */
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 13.5px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transform: translateY(-5px);
+}
+.site-nav a {
+  color: var(--silver);
+}
+.site-nav a:hover {
+  color: #fff;
+}
+.site-nav .nav-donate {
+  background: var(--gold);
+  color: var(--midnight);
+  padding: 13px 22px;
+  font-weight: 600;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+.site-nav .nav-donate:hover {
+  background: var(--gold-light);
+}
+
+/* Social icons: no box. The padding is an invisible tap target that keeps
+   them on the Donate button's 44px line. Gold on hover only. */
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.social-links a {
+  color: var(--silver);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 4px;
+}
+.social-links a:hover {
+  color: var(--gold);
+}
+
+/* Hamburger: hidden on desktop; replaces the inline nav below 960px. The
+   page script toggles .menu-open on .site-header and aria-expanded. */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.nav-toggle:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.nav-toggle .nt-close {
+  display: none;
+}
+.menu-open .nav-toggle .nt-open {
+  display: none;
+}
+.menu-open .nav-toggle .nt-close {
+  display: block;
+}
+
+.hero {
+  background: var(--navy);
+  padding: 88px var(--gutter);
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* ---------- Photo reel ---------- */
+/* Full-bleed filmstrip drifting right to left. Black and white lives here
+   as a CSS filter; the files stay color, and hovering a photo restores it.
+   margin-right (not gap) spaces items, so half the doubled track is an
+   exact loop. Duplicate the images once inside .reel-track. */
+.photo-reel {
+  padding: 0;
+  position: relative;
+  background: var(--midnight);
+  overflow: hidden;
+  touch-action: pan-y;
+}
+.reel-toggle {
+  position: absolute;
+  right: var(--gutter);
+  bottom: 12px;
+  background: rgba(15, 23, 43, 0.85);
+  color: var(--silver);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font: 600 11.5px/1 var(--sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 9px 12px;
+  cursor: pointer;
+}
+.reel-toggle:hover {
+  color: #fff;
+}
+.reel-track {
+  display: flex;
+  width: max-content;
+  animation: reel-drift 480s linear infinite;
+}
+.photo-reel:hover .reel-track,
+.photo-reel.paused .reel-track {
+  animation-play-state: paused;
+}
+.reel-track img {
+  height: 240px;
+  width: auto;
+  display: block;
+  margin-right: 6px;
+  filter: grayscale(1);
+  opacity: 0.92;
+  transition:
+    filter 0.4s,
+    opacity 0.4s;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.reel-track img:hover {
+  filter: none;
+  opacity: 1;
+}
+@keyframes reel-drift {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reel-track {
+    animation: none;
+  }
+}
+
+/* ---------- Goal meter ---------- */
+.goal-meter {
+  background: var(--navy-card);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 36px 34px;
+  position: relative;
+}
+/* Segmented bar. Each segment is its own track, sized to its share of the
+   goal, with a 2px gap at every milestone boundary. The fill inside a
+   segment starts at that segment's left edge, so consecutive met segments
+   read as one continuous gold line. A single-segment bar is the plain
+   meter from the original handoff. */
+.goal-meter .bar {
+  display: flex;
+  gap: 2px;
+  height: 30px;
+}
+.goal-meter .bar-seg {
+  position: relative;
+  flex: 0 0 auto;
+  min-width: 8px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.14);
+  overflow: hidden;
+}
+.goal-meter .bar-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: var(--gold);
+}
+.goal-meter .bar-seg[data-state="met"] .bar-fill {
+  width: 100% !important;
+}
+/* The segment's own dollars, printed inside it. Set data-ink="dark" once
+   the fill passes 70%, for contrast on gold. */
+.goal-meter .bar-amount {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  color: var(--silver);
+  pointer-events: none;
+}
+.goal-meter .bar-seg[data-ink="dark"] .bar-amount {
+  color: var(--midnight);
+}
+
+.goal-meter .milestones {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  gap: 2px;
+}
+/* Each label block sits under its segment, right-aligned: the dot marks
+   where the milestone is met, and the amount is the running total there. */
+.goal-meter .milestones li {
+  flex: 0 0 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  align-items: flex-end;
+  text-align: right;
+  padding-left: 10px;
+  font-size: 12.5px;
+  line-height: 1.3;
+  color: var(--steel-dark);
+}
+.goal-meter .milestones li:first-child {
+  padding-left: 0;
+}
+.goal-meter .ms-mark {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--steel-dark);
+  margin-bottom: 4px;
+}
+.goal-meter .ms-label {
+  font-weight: 600;
+  color: var(--silver);
+}
+.goal-meter .ms-amount {
+  font-variant-numeric: tabular-nums;
+}
+.goal-meter li[data-state="met"] .ms-mark {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.goal-meter li[data-state="met"] .ms-label::after {
+  content: " \2713";
+  color: var(--gold);
+}
+.goal-meter li[data-state="current"] .ms-mark {
+  border-color: var(--gold);
+}
+.goal-meter li[data-state="current"] .ms-label {
+  color: #fff;
+}
+.goal-meter li[data-state="upcoming"] .ms-label {
+  color: var(--steel-dark);
+}
+.goal-meter .next-label {
+  margin-top: 18px;
+  font-size: 14px;
+  color: var(--silver);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--midnight);
+  color: var(--steel-dark);
+  padding: 64px var(--gutter) 34px;
+}
+.site-footer p {
+  color: var(--steel-dark);
+  font-size: 14.5px;
+}
+.site-footer a {
+  color: var(--steel-dark);
+}
+.site-footer a:hover {
+  color: var(--gold);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 44px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  font-size: 14.5px;
+}
+.footer-col .col-title {
+  font-size: 11.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+/* ---------- Responsive ---------- */
+/* The large lockup and a five-item nav stop fitting on one row here, well
+   before the 960px layout break: step the lockup down, and let the nav
+   drop to its own row. */
+@media (max-width: 1400px) {
+  .site-header {
+    flex-wrap: wrap;
+    row-gap: 14px;
+  }
+  .logo-lockup-lg img {
+    width: 62px;
+    height: 62px;
+  }
+  .logo-lockup-lg .wordmark {
+    font-size: 27px;
+  }
+  .logo-lockup-lg .sub {
+    font-size: 13.5px;
+  }
+}
+
+@media (max-width: 960px) {
+  .display {
+    font-size: 44px;
+  }
+  h2,
+  .h1 {
+    font-size: 32px;
+  }
+  blockquote,
+  .pull-quote {
+    font-size: 27px;
+  }
+  .hero,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .ruled-list > * {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .reel-track img {
+    height: 160px;
+  }
+  .logo-lockup .wordmark {
+    white-space: normal;
+  }
+  .logo-lockup-lg img {
+    width: 52px;
+    height: 52px;
+  }
+  .logo-lockup-lg .wordmark {
+    font-size: 23px;
+  }
+  .logo-lockup-lg .sub {
+    font-size: 12px;
+  }
+
+  /* Below here the nav collapses into the hamburger. nowrap: with wrap,
+     flex breaks lines before it shrinks items and the toggle falls to a
+     second row. The open menu leaves the flow and drops below the header. */
+  .site-header {
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 16px;
+  }
+  .site-header .logo-lockup {
+    flex-shrink: 1;
+    min-width: 0;
+  }
+  .nav-toggle {
+    display: flex;
+  }
+  .site-nav {
+    display: none;
+  }
+  .site-header.menu-open .site-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    transform: none;
+    background: var(--midnight);
+    padding: 6px var(--gutter) 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .site-header.menu-open .site-nav a {
+    padding: 14px 2px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .site-header.menu-open .nav-donate {
+    margin-top: 14px;
+    justify-content: center;
+    border-bottom: none;
+  }
+  .site-header.menu-open .social-links {
+    padding-top: 16px;
+    justify-content: flex-start;
+  }
+  .site-header.menu-open .social-links a {
+    border-bottom: none;
+    padding: 0 4px;
+  }
+}

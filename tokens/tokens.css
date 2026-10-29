@@ -1,0 +1,53 @@
+/* Stanton College Preparatory Foundation — design tokens.
+   Mirrors tokens/tokens.json. Run `node scripts/check-tokens.mjs` after
+   changing either file. */
+
+:root {
+  /* Color */
+  --midnight: #0f172b; /* hero fields, footer, header, text on gold */
+  --navy: #16213c; /* core brand: headings, default text */
+  --devil-blue: #274270; /* links, secondary actions, active and focus states */
+  --gold: #b4883c; /* giving actions ONLY — keep scarce */
+  --gold-dark: #9c7330; /* gold hover on light */
+  --gold-light: #c79a4c; /* gold hover on dark */
+  --slate: #4a5567; /* body copy */
+  --steel: #5e6a80; /* labels, meta. 4.5:1 on white, paper and parchment */
+  --silver: #c6cbd3; /* text on navy, input borders */
+  --platinum: #e2e4e8; /* borders, rules */
+  --paper: #f8f8f6; /* page ground */
+  --parchment: #f3eada; /* gold-tinted fills */
+  --parchment-rule: #e4d3b0; /* border on parchment cards */
+  --navy-card: #1d2a48; /* card fill on navy */
+  --steel-dark: #8e9ab0; /* muted text on dark */
+  --white: #ffffff;
+
+  /* Type */
+  --serif: "Newsreader", Georgia, serif;
+  --sans: "Instrument Sans", system-ui, sans-serif;
+  --size-display: 62px;
+  --size-h1: 40px;
+  --size-h2: 26px;
+  --size-h3: 21px;
+  --size-stat: 52px;
+  --size-lead: 20px;
+  --size-body: 15.5px;
+  --size-input: 16px;
+  --size-label: 12.5px;
+  --size-eyebrow: 11.5px;
+
+  /* Layout */
+  --gutter: 6vw;
+  --max-width: 1440px;
+  --space-section: 84px;
+  --space-section-head: 44px;
+  --space-grid-2: 56px;
+  --space-grid-3: 28px;
+  --space-grid-4: 44px;
+  --space-tap-target: 48px;
+
+  /* Borders */
+  --radius: 0px;
+  --hairline: 1px;
+  --flag: 3px;
+  --focus: 2px;
+}
