@@ -32,6 +32,7 @@ Rules for coding agents working in this repo. Read `README.md` first. This file 
 - Branch from `main` and open pull requests into `main`. Do not push to `main`.
 - Keep the CI job name `build`. Branch protection on `main` is meant to require a check with that name.
 - Do not push tags. A tag is a release; a person makes it (README, "Releasing").
+- Node comes from `.nvmrc`. Do not write a Node version into a workflow; use `node-version-file: .nvmrc`.
 - Pin third-party GitHub Actions to a full 40-character commit SHA, with the version tag in a comment.
 
 ## Writing
