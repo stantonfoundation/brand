@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Every dependency is pinned to an exact version. `pnpm add` saves exact versions, and `pnpm test` fails on a range.
+
 ## 1.1.0 — 2026-10-29
 
 - Versioning: a major version only when a class or token is renamed or removed. Additions and visual changes are minor.

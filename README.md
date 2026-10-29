@@ -46,6 +46,7 @@ handoff/
 scripts/
   check-tokens.mjs   Fails if tokens.json and tokens.css disagree
   check-contrast.mjs Fails if a color pair falls short; writes the color.md table
+  check-pins.mjs     Fails if a dependency is not an exact version
   build-pages.mjs    Assembles the published style guide in _site/
   build-kit.mjs      Builds the brand kit zip in _kit/
   release-notes.mjs  Prints a version's CHANGELOG.md section
@@ -105,7 +106,7 @@ Requires Node 26, the current LTS, and pnpm 11 or later. `.nvmrc` holds the Node
 nvm use
 pnpm install
 pnpm lint          # Prettier and markdownlint, check only
-pnpm test          # token and contrast checks
+pnpm test          # token, contrast and pin checks
 pnpm contrast      # rewrite the contrast table in guidelines/color.md
 pnpm check:links   # link check; needs lychee installed locally
 pnpm format        # Prettier, rewriting files
@@ -117,7 +118,7 @@ The `build` workflow runs all of these, plus actionlint, on every push and pull 
 
 ## Dependency updates
 
-Dependabot (`.github/dependabot.yml`) proposes updates weekly for the dev tools in `package.json` and for the actions in the workflows. Minor and patch updates come grouped, one pull request per ecosystem; a major update gets its own. A new release waits seven days before Dependabot proposes it. Review and merge these like any pull request: the `build` check must pass.
+Every dependency in `package.json` is pinned to an exact version, and `pnpm-workspace.yaml` makes `pnpm add` save exact versions. `pnpm test` fails on a range. Dependabot (`.github/dependabot.yml`) proposes updates weekly for the dev tools in `package.json` and for the actions in the workflows. Minor and patch updates come grouped, one pull request per ecosystem; a major update gets its own. A new release waits seven days before Dependabot proposes it. Review and merge these like any pull request: the `build` check must pass.
 
 ## Publishing
 

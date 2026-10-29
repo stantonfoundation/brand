@@ -27,14 +27,14 @@
   "scripts": {
     "lint": "prettier --check . && markdownlint-cli2",
     "format": "prettier --write .",
-    "test": "node scripts/check-tokens.mjs && node scripts/check-contrast.mjs",
+    "test": "node scripts/check-tokens.mjs && node scripts/check-contrast.mjs && node scripts/check-pins.mjs",
     "check:links": "lychee --config lychee.toml \"**/*.md\" \"**/*.html\"",
     "contrast": "node scripts/check-contrast.mjs --write && prettier --write guidelines/color.md",
     "build:pages": "node scripts/build-pages.mjs",
     "build:kit": "node scripts/build-kit.mjs"
   },
   "devDependencies": {
-    "markdownlint-cli2": "^0.24.0",
-    "prettier": "^3.9.10"
+    "markdownlint-cli2": "0.24.0",
+    "prettier": "3.9.10"
   }
 }
