@@ -21,7 +21,4 @@ Target: WCAG 2.2 AA. The website was audited against it in October 2026 (landmar
 - Do not convey state by color alone. Met milestones get a ✓ as well as gold.
 - Icon-only links (social icons, the hamburger) need an `aria-label`.
 - Links that open a new tab say so, or carry `rel="noopener"` and an icon.
-
-## Open items
-
-- The arc type in the image lockups is unreadable to screen readers. Always give the logo image alt text with the full name.
+- Give every logo image alt text with the Foundation's full name. Screen readers cannot read the arc type in the lockups.

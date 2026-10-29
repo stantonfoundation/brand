@@ -1,5 +1,5 @@
 {
-  "$description": "Every color pair the system uses, with the WCAG 2 ratio it needs. scripts/check-contrast.mjs computes each ratio from tokens.json, fails when one falls short, and writes the table in guidelines/color.md. min: 4.5 for body text, 3 for large text (24px, or 18.66px bold) and for UI boundaries such as focus rings. A pair with an exception is a known failure: it is reported, not failed, and must be listed in guidelines/accessibility.md.",
+  "$description": "Every color pair the system uses, with the WCAG 2 ratio it needs. scripts/check-contrast.mjs computes each ratio from tokens.json, fails when one falls short, and writes the table in guidelines/color.md. min: 4.5 for body text, 3 for large text (24px, or 18.66px bold) and for UI boundaries such as focus rings.",
   "pairs": [
     {
       "fg": "navy",

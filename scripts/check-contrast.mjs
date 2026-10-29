@@ -41,8 +41,7 @@ const floor2 = (n) => Math.floor(n * 100) / 100;
 
 const results = pairs.map((p) => ({ ...p, ratio: floor2(ratio(p.fg, p.bg)) }));
 
-const failures = results.filter((r) => r.ratio < r.min && !r.exception);
-const fixed = results.filter((r) => r.ratio >= r.min && r.exception);
+const failures = results.filter((r) => r.ratio < r.min);
 
 const verdict = (r) => {
   if (r.ratio < r.min) return `Fails (needs ${r.min}:1)`;
@@ -53,15 +52,10 @@ const verdict = (r) => {
 const table = [
   "| Foreground on ground | Use | Ratio | Result |",
   "| --- | --- | --- | --- |",
-  ...results.map((r) => {
-    const cells = [
-      `${r.fg} on ${r.bg}`,
-      r.exception ?? r.use,
-      r.ratio.toFixed(2),
-      verdict(r),
-    ];
-    return `| ${(r.exception ? cells.map((c) => `**${c}**`) : cells).join(" | ")} |`;
-  }),
+  ...results.map(
+    (r) =>
+      `| ${r.fg} on ${r.bg} | ${r.use} | ${r.ratio.toFixed(2)} | ${verdict(r)} |`,
+  ),
 ].join("\n");
 
 const START =
@@ -91,11 +85,6 @@ for (const r of failures) {
     `${r.fg} on ${r.bg}: ${r.ratio.toFixed(2)}:1, needs ${r.min}:1 (${r.use})`,
   );
 }
-for (const r of fixed) {
-  errors.push(
-    `${r.fg} on ${r.bg} now passes (${r.ratio.toFixed(2)}:1). Remove its exception from tokens/contrast.json and the open item from guidelines/accessibility.md.`,
-  );
-}
 // Compare ignoring column padding, which Prettier owns.
 const squash = (s) =>
   s
@@ -112,10 +101,4 @@ if (errors.length) {
   console.error(errors.join("\n"));
   process.exit(1);
 }
-const known = results.filter((r) => r.exception);
-console.log(
-  `contrast ok: ${results.length} pairs` +
-    (known.length
-      ? `; ${known.length} known exceptions: ${known.map((r) => `${r.fg} on ${r.bg}`).join(", ")}`
-      : ""),
-);
+console.log(`contrast ok: ${results.length} pairs`);
