@@ -142,6 +142,8 @@ A release is a version tag. The website pins a tag, so nothing reaches the websi
 3. Tag the merge commit and push the tag: `git tag v1.2.0 && git push origin v1.2.0`.
 4. `release.yml` publishes the GitHub Release with the brand kit attached. It refuses a tag that is not on `main`, does not match `package.json`, or has no changelog section.
 
+A ruleset on `v*` tags blocks moving or deleting a tag once it is pushed, because the website installs the package by tag. Check the commit before you push a tag. To fix a bad tag, release the next version.
+
 ## Moving to a new Node LTS
 
 Dependabot does not update Node itself. When a new Node release becomes the Active LTS (each October in even years):
