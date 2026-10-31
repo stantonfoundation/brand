@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Every dependency is pinned to an exact version. `pnpm add` saves exact versions, and `pnpm test` fails on a range.
+- A ruleset on `v*` tags blocks moving or deleting a release tag. README, "Releasing", describes it.
 
 ## 1.1.0 — 2026-10-29
 
