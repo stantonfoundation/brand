@@ -114,7 +114,7 @@ pnpm build:pages   # the published style guide, in _site/
 pnpm build:kit     # the brand kit zip, in _kit/
 ```
 
-The `build` workflow runs all of these, plus actionlint, on every push and pull request. A ruleset on `main` requires a pull request and a passing `build` check, and blocks force-pushes and deleting the branch. `handoff/` is excluded from every check, so it stays byte-identical to the original zip.
+The `build` workflow runs all of these, plus actionlint, on every push and pull request. A ruleset on `main` requires a pull request, a passing `build` check and a CodeQL result with no security alert rated high or above, and blocks force-pushes and deleting the branch. `SECURITY.md` lists the rest of GitHub's checks and says how to report a vulnerability. `handoff/` is excluded from every check, so it stays byte-identical to the original zip.
 
 ## Dependency updates
 

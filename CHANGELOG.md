@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- `SECURITY.md` says how to report a vulnerability, privately, for this repo and the website. CodeQL, secret scanning with push protection, Dependabot security updates and private vulnerability reporting are on, and the ruleset on `main` blocks a merge on a high or critical CodeQL alert.
 - Every dependency is pinned to an exact version. `pnpm add` saves exact versions, and `pnpm test` fails on a range.
 - A ruleset on `v*` tags blocks moving or deleting a release tag. README, "Releasing", describes it.
 
