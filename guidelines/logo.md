@@ -15,6 +15,7 @@ All files are in `assets/logo/`.
 | `scpf-wide-dark.svg`             | Wide logo, white type and gold "FOUNDATION", transparent   | Midnight and navy                                         |
 | `scpf-wide.png`                  | `scpf-wide.svg` as a PNG, 1600 wide                        | Where SVG is not accepted: email, office documents        |
 | `scpf-wide-dark.png`             | `scpf-wide-dark.svg` as a PNG, 1600 wide                   | Where SVG is not accepted, on dark grounds                |
+| `scpf-wide-600.png`              | `scpf-wide.svg` as a PNG, 600×89, 26 KB                    | Web pages: the website's printed header                   |
 | `scpf-mark.svg`                  | Knot only, on white                                        | Light grounds                                             |
 | `scpf-mark-muted.svg`            | Knot only, softened tones                                  | Light grounds, watermarks, large background use           |
 | `scpf-mark-dark.svg`             | Knot only, on its own midnight square                      | Social avatars, app icons                                 |
@@ -48,7 +49,7 @@ The wide logo is the website header's lockup as a file: the knot, then "Stanton 
 
 ## About the files
 
-The square SVG files are 0.8 to 1.6 MB each, too heavy for web pages. The website uses the 20 KB PNG in its header and footer for that reason. The wide SVGs are about 0.5 MB.
+The square SVG files are 0.8 to 1.6 MB each, too heavy for web pages. The website uses the 20 KB PNG in its header and footer for that reason. The wide SVGs are about 0.5 MB. On a web page, use `scpf-wide-600.png` instead.
 
 The knot in every file is a raster image inside the SVG, so no file scales without limit. The wide SVGs carry the knot at about 640 pixels across in the light file and 970 in the dark one. That is enough for letterhead, slides and documents. For a large-format banner, print a proof of the knot at full size first.
 
