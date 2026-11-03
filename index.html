@@ -152,6 +152,19 @@
         aspect-ratio: 1;
         object-fit: contain;
       }
+      .logos-wide {
+        grid-template-columns: repeat(auto-fill, minmax(min(380px, 100%), 1fr));
+        margin-top: 14px;
+      }
+      .logos-wide img {
+        aspect-ratio: auto;
+        height: 132px;
+        padding: 0 28px;
+        box-sizing: border-box;
+      }
+      .logos-wide .on-midnight {
+        background: var(--midnight);
+      }
       .logos figcaption {
         padding: 10px 12px;
         font-size: 13px;
@@ -273,11 +286,33 @@
               </figcaption>
             </figure>
           </div>
+          <div class="logos logos-wide">
+            <figure>
+              <img
+                src="assets/logo/scpf-wide.svg"
+                alt="Wide logo: the knot with the name set beside it, navy type"
+              />
+              <figcaption>
+                <code>scpf-wide.svg</code><br />Wide, light grounds
+              </figcaption>
+            </figure>
+            <figure>
+              <img
+                class="on-midnight"
+                src="assets/logo/scpf-wide-dark.svg"
+                alt="Wide logo: the knot with the name set beside it, white type"
+              />
+              <figcaption>
+                <code>scpf-wide-dark.svg</code><br />Wide, dark grounds
+              </figcaption>
+            </figure>
+          </div>
           <p style="margin-top: 16px; max-width: 70ch">
             Do not recolor, outline, stretch or box the knot. Keep clear space
             of at least a quarter of the knot's width on every side. Minimum
             sizes: the knot alone 32px tall on screen; the full lockup 120px
-            wide on screen, or 1 inch in print. More files, including muted and
+            wide on screen, or 1 inch in print; the wide logo 300px wide on
+            screen, or 2.5 inches in print. More files, including muted and
             transparent versions, are in <code>assets/logo/</code>.
           </p>
         </section>
