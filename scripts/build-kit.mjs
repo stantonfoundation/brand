@@ -44,6 +44,8 @@ See the style guide first: https://brand.stantonfoundation.org
 logo/          Lockups and marks. Pick the file that matches the ground:
                scpf-lockup.svg            full logo, light grounds
                scpf-lockup-dark.svg       full logo, on its own midnight square
+               scpf-wide.svg / .png       knot and name side by side, light grounds
+               scpf-wide-dark.svg / .png  the same, white type, for dark grounds
                scpf-mark.svg              the knot alone, light grounds
                scpf-mark-dark.svg         the knot alone, on midnight (avatars)
                scpf-mark-dark-transparent.png   the knot alone, transparent

@@ -62,6 +62,18 @@
       "use": "Links, outline buttons, .eyebrow-ink"
     },
     {
+      "fg": "navy",
+      "bg": "parchment",
+      "min": 4.5,
+      "use": "Wide logo's name on parchment"
+    },
+    {
+      "fg": "devil-blue",
+      "bg": "parchment",
+      "min": 4.5,
+      "use": "Wide logo's Foundation line on parchment"
+    },
+    {
       "fg": "white",
       "bg": "navy",
       "min": 4.5,
@@ -96,6 +108,12 @@
       "bg": "navy",
       "min": 4.5,
       "use": "Body text on navy"
+    },
+    {
+      "fg": "white",
+      "bg": "midnight",
+      "min": 4.5,
+      "use": "Wide logo's name, headings on midnight"
     },
     {
       "fg": "silver",

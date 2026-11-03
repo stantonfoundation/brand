@@ -69,12 +69,15 @@ The pairs and the ratio each one needs live in `tokens/contrast.json`. `pnpm tes
 | steel on parchment      | Labels in parchment cards                   | 4.57  | AA         |
 | devil-blue on white     | Links, outline buttons, .eyebrow-ink        | 10.00 | AAA        |
 | devil-blue on paper     | Links, outline buttons, .eyebrow-ink        | 9.40  | AAA        |
+| navy on parchment       | Wide logo's name on parchment               | 13.35 | AAA        |
+| devil-blue on parchment | Wide logo's Foundation line on parchment    | 8.37  | AAA        |
 | white on navy           | Navy buttons, headings on dark              | 15.94 | AAA        |
 | white on devil-blue     | Navy and outline button hover               | 10.00 | AAA        |
 | midnight on gold        | Gold buttons, match banner                  | 5.54  | AA         |
 | midnight on gold-light  | Gold button and header Donate hover         | 6.92  | AA         |
 | midnight on parchment   | Selected gift amount                        | 14.93 | AAA        |
 | silver on navy          | Body text on navy                           | 9.78  | AAA        |
+| white on midnight       | Wide logo's name, headings on midnight      | 17.83 | AAA        |
 | silver on midnight      | Body text and nav links on midnight         | 10.93 | AAA        |
 | silver on navy-card     | Milestone labels in the goal meter          | 8.72  | AAA        |
 | steel-dark on midnight  | Footer text                                 | 6.28  | AA         |

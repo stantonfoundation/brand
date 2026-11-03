@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Wide logo files: `scpf-wide.svg` for light grounds and `scpf-wide-dark.svg` for dark grounds, with a 1600-wide PNG of each. They set the knot beside the name, spaced and typed like the website header's lockup, on a transparent background. `guidelines/logo.md` says when to use square or wide, and the style guide shows both.
 - `SECURITY.md` says how to report a vulnerability, privately, for this repo and the website. CodeQL, secret scanning with push protection, Dependabot security updates and private vulnerability reporting are on, and the ruleset on `main` blocks a merge on a high or critical CodeQL alert.
 - Every dependency is pinned to an exact version. `pnpm add` saves exact versions, and `pnpm test` fails on a range.
 - A ruleset on `v*` tags blocks moving or deleting a release tag. README, "Releasing", describes it.
