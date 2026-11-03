@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.0 — 2026-11-03
+
+- `scpf-wide-600.png`: the light-ground wide logo at 600×89, 26 KB, for web pages. The website loads it in its header and shows it only in print. The SVG is 0.5 MB, and a file that starts loading only when someone prints can miss the printout.
+
 ## 1.2.0 — 2026-11-03
 
 - Wide logo files: `scpf-wide.svg` for light grounds and `scpf-wide-dark.svg` for dark grounds, with a 1600-wide PNG of each. They set the knot beside the name, spaced and typed like the website header's lockup, on a transparent background. `guidelines/logo.md` says when to use square or wide, and the style guide shows both.
