@@ -34,7 +34,7 @@
     "build:kit": "node scripts/build-kit.mjs"
   },
   "devDependencies": {
-    "markdownlint-cli2": "0.24.0",
-    "prettier": "3.9.10"
+    "markdownlint-cli2": "0.24.1",
+    "prettier": "3.10.1"
   }
 }
